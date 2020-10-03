@@ -33,7 +33,8 @@ export default {
         .then(response => {
           console.log(response);
           cookies.remove("session");
-          this.$router.push("/login");
+          cookies.remove("user");
+          this.$router.push("/");
         })
         .catch(error => {
           console.log(error);
@@ -43,6 +44,6 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped>
+<style lang="scss" scoped>
 
 </style>

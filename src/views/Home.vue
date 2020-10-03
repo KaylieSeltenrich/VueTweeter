@@ -1,14 +1,13 @@
 <template>
     <div>
         <h1> Tweeter Home </h1>
-        <div id="navbar">
-        <router-link to="/">Home</router-link> |
-        <router-link to="/signup">Signup</router-link> |
-        <router-link to="/login">Login</router-link> |
-        <router-link to="/profile">Profile</router-link> |
-        </div>
+        <navbar> </navbar>
+        
     <div v-if="loginToken">
-This should only show up if the user is logged in 
+This should only show up if the user is logged in <br>
+
+<logout> </logout>
+
     </div>
 
 
@@ -17,8 +16,9 @@ This should only show up if the user is logged in
 </template>
 
 <script>
-
+import Navbar from "../components/Navbar.vue";
 import cookies from "vue-cookies";
+import Logout from "../components/Logout.vue";
 
     export default {
         name: "home-page",
@@ -28,10 +28,15 @@ import cookies from "vue-cookies";
                 loginToken: cookies.get("session")
             }
         },
+        
+        components: {
+            Navbar,
+            Logout,
+        },
     }
 
 </script>
 
-<style lang="sass" scoped>
+<style lang="scss" scoped>
 
 </style>

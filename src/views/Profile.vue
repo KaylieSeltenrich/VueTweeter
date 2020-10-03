@@ -1,6 +1,6 @@
 <template>
   <div>
-    <logout-user> </logout-user>
+   <navbar> </navbar>
     <view-followers> </view-followers>
     <update-profile> </update-profile>
     <delete-profile> </delete-profile>
@@ -11,7 +11,8 @@
 import UpdateProfile from "../components/UpdateProfile.vue";
 import DeleteProfile from "../components/DeleteProfile.vue";
 import ViewFollowers from "../components/ViewFollowers.vue";
-import LogoutUser from "../components/Logout.vue";
+import Navbar from "../components/Navbar.vue"
+
 export default {
   name: "profile-page",
 
@@ -19,12 +20,11 @@ export default {
     UpdateProfile,
     DeleteProfile,
     ViewFollowers,
-    LogoutUser,
-
+    Navbar
   }
 };
 </script>
 
-<style lang="sass" scoped>
+<style lang="scss" scoped>
 
 </style>

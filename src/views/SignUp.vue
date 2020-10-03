@@ -18,6 +18,6 @@ import SignupForm from "../components/SignupForm.vue"
     }
 </script>
 
-<style lang="sass" scoped>
+<style lang="scss" scoped>
 
 </style>
