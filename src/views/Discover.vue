@@ -1,18 +1,18 @@
 <template>
-    <div>
- <view-profiles> </view-profiles>
-    </div>
+  <div>
+    <view-profiles> </view-profiles>
+  </div>
 </template>
 
 <script>
-import ViewProfiles from "../components/ViewProfiles.vue"
-    export default {
-    name: "discover-page",
+import ViewProfiles from "../components/ViewProfiles.vue";
+export default {
+  name: "discover-page",
 
-    components: {
-      ViewProfiles,
-    },
-    }
+  components: {
+    ViewProfiles
+  }
+};
 </script>
 
 <style lang="sass" scoped>
