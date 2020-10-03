@@ -24,12 +24,19 @@ import cookies from "vue-cookies";
 </script>
 
 <style lang="scss" scoped>
+
+
 #navbar {
     font-size: 1.5em;
+    background-color: rgb(70, 144, 230);
+    padding: 2%;
+    text-align: center;
 
     a {
      text-decoration: none;
-     color: black;
+     color: white;
+     margin: 5%;
+
     }
 }
 </style>

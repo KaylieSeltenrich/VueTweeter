@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 @click="logOut">Log Out</h2>
+    <div id="log-out" @click="logOut">Log Out</div>
   </div>
 </template>
 
@@ -46,4 +46,11 @@ export default {
 
 <style lang="scss" scoped>
 
+#log-out {
+    text-align: center;
+    border: 1px solid black;
+    margin: 10%;
+    font-size: 1.5em;
+    box-shadow: 10px 5px 25px 2px  black;
+}
 </style>
