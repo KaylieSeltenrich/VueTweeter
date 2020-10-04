@@ -1,7 +1,7 @@
 <template>
   <div>
-      <navbar> </navbar>
-    <h1>THIS IS THE LOGIN</h1>
+    <navbar> </navbar>
+    \
     <p>Email</p>
     <input type="text" id="email-input" v-model="email" />
     <p>Password</p>
