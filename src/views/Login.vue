@@ -1,7 +1,5 @@
 <template>
   <div>
-    <navbar> </navbar>
-    \
     <p>Email</p>
     <input type="text" id="email-input" v-model="email" />
     <p>Password</p>
@@ -14,12 +12,9 @@
 <script>
 import axios from "axios";
 import cookies from "vue-cookies";
-import Navbar from "../components/Navbar.vue";
 
 export default {
-  components: {
-    Navbar
-  },
+
   data() {
     return {
       email: "",

@@ -1,24 +1,20 @@
 <template>
-    <div>
-<navbar> </navbar>
-<signup-form> </signup-form>
-    </div>
+  <div>
+    <signup-form> </signup-form>
+  </div>
 </template>
 
 <script>
-import SignupForm from "../components/SignupForm.vue"
-import Navbar from "../components/Navbar.vue"
+import SignupForm from "../components/SignupForm.vue";
 
-    export default {
-        name: "signup-page",
+export default {
+  name: "signup-page",
 
-       components: {
-           SignupForm,
-           Navbar
-       },
-    }
+  components: {
+    SignupForm
+  }
+};
 </script>
 
 <style lang="scss" scoped>
-
 </style>

@@ -1,6 +1,5 @@
 <template>
   <div>
-   <navbar> </navbar>
     <view-following> </view-following>
     <update-profile> </update-profile>
     <delete-profile> </delete-profile>
@@ -11,7 +10,6 @@
 import UpdateProfile from "../components/UpdateProfile.vue";
 import DeleteProfile from "../components/DeleteProfile.vue";
 import ViewFollowing from "../components/ViewFollowing.vue";
-import Navbar from "../components/Navbar.vue"
 
 export default {
   name: "profile-page",
@@ -19,12 +17,10 @@ export default {
   components: {
     UpdateProfile,
     DeleteProfile,
-    ViewFollowing,
-    Navbar
+    ViewFollowing
   }
 };
 </script>
 
 <style lang="scss" scoped>
-
 </style>

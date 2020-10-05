@@ -36,7 +36,7 @@ import cookies from "vue-cookies";
      text-decoration: none;
      color: white;
      margin: 5%;
-
     }
+
 }
 </style>
