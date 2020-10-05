@@ -1,7 +1,7 @@
 <template>
   <div>
    <navbar> </navbar>
-    <view-followers> </view-followers>
+    <view-following> </view-following>
     <update-profile> </update-profile>
     <delete-profile> </delete-profile>
   </div>
@@ -10,7 +10,7 @@
 <script>
 import UpdateProfile from "../components/UpdateProfile.vue";
 import DeleteProfile from "../components/DeleteProfile.vue";
-import ViewFollowers from "../components/ViewFollowers.vue";
+import ViewFollowing from "../components/ViewFollowing.vue";
 import Navbar from "../components/Navbar.vue"
 
 export default {
@@ -19,7 +19,7 @@ export default {
   components: {
     UpdateProfile,
     DeleteProfile,
-    ViewFollowers,
+    ViewFollowing,
     Navbar
   }
 };

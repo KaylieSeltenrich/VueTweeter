@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 @click="viewFollowers">View People you Follow:</h2>
+    <h2 @click="viewFollowing">View People you Follow:</h2>
     <h3 v-for="follow in follows" :key="follow.userId">
       {{ follow.username }} <br />
       {{ follow.email }} <br />
@@ -14,7 +14,7 @@ import axios from "axios";
 import cookies from "vue-cookies";
 
 export default {
-  name: "view-followers",
+  name: "view-following",
 
   data() {
     return {
@@ -23,7 +23,7 @@ export default {
     };
   },
   methods: {
-    viewFollowers: function() {
+    viewFollowing: function() {
       axios
         .request({
           url: "https://tweeterest.ml/api/follows",

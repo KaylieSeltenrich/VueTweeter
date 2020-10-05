@@ -21,8 +21,8 @@
       <button @click="updateTweet(tweet.content, tweet.tweetId)">
         Edit Tweet
       </button>
-      <button @click="deleteTweet(tweet.content, tweet.tweetId)">
-       Delete Tweet 
+      <button @click="deleteTweet(tweet.tweetId)">
+        Delete Tweet
       </button>
     </h3>
   </div>
@@ -98,7 +98,7 @@ export default {
         });
     },
 
-    deleteTweet: function() {
+    deleteTweet: function(id) {
       axios
         .request({
           url: "https://tweeterest.ml/api/tweets",
@@ -108,7 +108,8 @@ export default {
             "X-Api-Key": "SVzuhkqP5JrStTsfETYXW6UQZs0UV95ENy1VscJoZ3L5P"
           },
           data: {
-          
+            loginToken: cookies.get("session"),
+            tweetId: id
           }
         })
         .then(response => {
