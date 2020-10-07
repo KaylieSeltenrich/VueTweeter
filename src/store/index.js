@@ -9,6 +9,7 @@ export default new Vuex.Store({
   state: {
     userId: cookies.get("user"),
     allTweets: [],
+    followTweets: [],
   },
   mutations: {
     updateAllTweets: function (state, data) {
@@ -38,11 +39,23 @@ export default new Vuex.Store({
           console.log(error);
         });
     },
+
+
   },
   getters: {
 
     getUserTweets: function (state) {
       return state.allTweets.filter(function (tweet) { return state.userId == tweet.userId })
+    },
+
+    getFollowingTweets: (state) => (follows) => {
+      return state.allTweets.filter(function (tweet) {
+        for (let i = 0; i < follows.length; i++) {
+          if (tweet.userId == follows[i].userId) {
+            return true
+          }
+        } return false
+      })
     }
   }
 });

@@ -31,10 +31,8 @@
 <script>
 import axios from "axios";
 import cookies from "vue-cookies";
-
 export default {
   name: "create-tweet",
-
   mounted: function() {
     this.getTweets();
   },
@@ -44,13 +42,11 @@ export default {
       userId: cookies.get("user")
     };
   },
-
   computed: {
     tweets() {
       return this.$store.getters.getUserTweets;
     }
   },
-
   methods: {
     createTweet: function() {
       axios
@@ -74,7 +70,6 @@ export default {
           console.log(error);
         });
     },
-
     updateTweet: function(content, id) {
       axios
         .request({
@@ -97,7 +92,6 @@ export default {
           console.log(error);
         });
     },
-
     deleteTweet: function(id) {
       axios
         .request({
@@ -119,7 +113,6 @@ export default {
           console.log(error);
         });
     },
-
     getTweets: function() {
       this.$store.dispatch("getAllTweets");
     }

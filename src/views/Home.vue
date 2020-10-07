@@ -1,8 +1,11 @@
 <template>
   <div>
     <div v-if="loginToken">
-      <create-tweet> </create-tweet>
+      <create-tweets> </create-tweets>
       <logout> </logout>
+    </div>
+    <div v-if="!loginToken">
+    <p> Please sign up or log in to continue. </p>
     </div>
   </div>
 </template>
@@ -10,7 +13,7 @@
 <script>
 import cookies from "vue-cookies";
 import Logout from "../components/Logout.vue";
-import CreateTweet from "../components/CreateTweet.vue";
+import CreateTweets from "../components/CreateTweets.vue";
 
 export default {
   name: "home-page",
@@ -23,7 +26,7 @@ export default {
 
   components: {
     Logout,
-    CreateTweet
+    CreateTweets
   }
 };
 </script>
@@ -34,5 +37,12 @@ export default {
 * {
   margin: 0%;
   padding: 0%;
+  
+}
+
+p {
+  font-size: 1.5em;
+  text-align: center;
+  margin: 5%;
 }
 </style>

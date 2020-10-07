@@ -6,6 +6,9 @@
       {{ follow.email }} <br />
       <h3 @click="unFollow(follow.userId)">Un-Follow this user</h3>
     </h3>
+    <div v-for="followsTweet in followsTweets" :key="followsTweet.tweetId">
+      <p>{{ followsTweet.content }}</p>
+    </div>
   </div>
 </template>
 
@@ -19,7 +22,7 @@ export default {
   data() {
     return {
       userId: "",
-      follows: [],
+      follows: []
     };
   },
   methods: {
@@ -46,7 +49,7 @@ export default {
     },
 
     unFollow: function(followId) {
-     console.log(followId)
+      console.log(followId);
       axios
         .request({
           url: "https://tweeterest.ml/api/follows",
@@ -57,7 +60,7 @@ export default {
           },
           data: {
             loginToken: cookies.get("session"),
-            followId: followId,
+            followId: followId
           }
         })
         .then(response => {
@@ -72,5 +75,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 </style>

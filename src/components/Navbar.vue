@@ -1,42 +1,49 @@
 <template>
-
-<div id="navbar">
-        <router-link to="/login" v-if="!loginToken">Login </router-link> 
-        <router-link to="/signup" v-if="!loginToken">Signup </router-link> 
-        <router-link to="/" v-if="loginToken"> Home </router-link> 
-        <router-link to="/profile" v-if="loginToken"> Profile </router-link> 
-        <router-link to="/discover" v-if="loginToken"> Discover </router-link> 
- </div>
-    
+  <div id="navbar">
+    <router-link to="/login" v-if="!loginToken">Login </router-link>
+    <router-link to="/signup" v-if="!loginToken">Signup </router-link>
+    <router-link to="/" v-if="loginToken"> Home </router-link>
+    <router-link to="/profile" v-if="loginToken"> Profile </router-link>
+    <router-link to="/discover" v-if="loginToken"> Discover </router-link>
+    <router-link to="/feed" v-if="loginToken"> Feed </router-link>
+  </div>
 </template>
 
 <script>
 import cookies from "vue-cookies";
 
-    export default {
-        name: "navigation-bar",
-    data() {
+export default {
+  name: "navigation-bar",
+  data() {
     return {
       loginToken: cookies.get("session")
     };
-  },
-    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
-
+* {
+  margin: 0%;
+  padding: 0%;
+}
 
 #navbar {
-    font-size: 1.5em;
-    background-color: rgb(70, 144, 230);
-    padding: 2%;
-    text-align: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  font-size: 1.5em;
+  background-color: rgb(70, 144, 230);
+  min-height:2rem;
+  width: 100%;
+  text-align: center;
+  align-content: center;
+  position: sticky;
+  bottom: 0%;
 
-    a {
-     text-decoration: none;
-     color: white;
-     margin: 5%;
-    }
-
+  a {
+    text-decoration: none;
+    color: white;
+    margin: 5%;
+  }
 }
 </style>

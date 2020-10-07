@@ -4,7 +4,8 @@ import SignupPage from "../views/SignUp.vue";
 import LoginPage from "../views/Login.vue";
 import ProfilePage from "../views/Profile.vue";
 import HomePage from "../views/Home.vue";
-import DiscoverPage from "../views/Discover.vue"
+import DiscoverPage from "../views/Discover.vue";
+import Feed from "../views/Feed.vue"
 
 Vue.use(VueRouter);
 
@@ -35,6 +36,12 @@ const routes = [
   path: "/discover",
   name: "discover-page",
   component: DiscoverPage
+},
+
+{
+  path: "/feed",
+  name: "feed-page",
+  component: Feed
 },
 ];
 

@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <div id="page-header">
-      <img id="icon" src="../assets/squawkericon.svg" alt="squawker icon" />
-      <h1 id="title">Squawker</h1>
-    </div>
+  <div id="page-header">
+    <img id="icon" src="../assets/squawkericon.svg" alt="squawker icon" />
+    <h1 id="title">Squawker</h1>
   </div>
 </template>
 
@@ -24,6 +22,7 @@ export default {
   grid-template-columns: 1fr 1fr;
   width: 100%;
   align-items: center;
+  height: 5%;
 }
 
 #title {
