@@ -1,11 +1,10 @@
 <template>
-
-  <div id="container">
-     <div v-if="loginToken">
-    <update-profile> </update-profile>
-    <view-following> </view-following>
-    <delete-profile> </delete-profile>
-  </div>
+  <div v-if="loginToken">
+    <div id="container">
+      <update-profile> </update-profile>
+      <view-following> </view-following>
+      <delete-profile> </delete-profile>
+    </div>
   </div>
 </template>
 
@@ -24,7 +23,7 @@ export default {
     ViewFollowing
   },
 
-   data() {
+  data() {
     return {
       loginToken: cookies.get("session")
     };

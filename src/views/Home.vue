@@ -2,7 +2,6 @@
   <div>
     <div v-if="loginToken">
       <create-tweets> </create-tweets>
-      <logout> </logout>
     </div>
     <div v-if="!loginToken">
     <p> Please sign up or log in to continue. </p>
@@ -12,7 +11,6 @@
 
 <script>
 import cookies from "vue-cookies";
-import Logout from "../components/Logout.vue";
 import CreateTweets from "../components/CreateTweets.vue";
 
 export default {
@@ -25,7 +23,6 @@ export default {
   },
 
   components: {
-    Logout,
     CreateTweets
   }
 };

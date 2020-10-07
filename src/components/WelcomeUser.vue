@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="log-out" @click="logOut">Log Out</div>
+    <div id="welcome-message">Welcome {{ user[0].username }}</div>
   </div>
 </template>
 
@@ -9,32 +9,31 @@ import axios from "axios";
 import cookies from "vue-cookies";
 
 export default {
-  name: "logout-user",
   data() {
     return {
-      loginToken: cookies.get("session")
+      user: {},
     };
   },
-
+  mounted: function() {
+    this.getUsername();
+  },
   methods: {
-    logOut: function() {
+    getUsername: function() {
       axios
         .request({
-          url: "https://tweeterest.ml/api/login",
-          method: "DELETE",
+          url: "https://tweeterest.ml/api/users",
+          method: "GET",
           headers: {
             "Content-Type": "application/json",
             "X-Api-Key": "SVzuhkqP5JrStTsfETYXW6UQZs0UV95ENy1VscJoZ3L5P"
           },
-          data: {
-            loginToken: this.loginToken
+          params: {
+            userId: cookies.get("user")
           }
         })
         .then(response => {
-          console.log(response);
-          cookies.remove("session");
-          cookies.remove("user");
-          this.$router.push("/");
+          console.log(response.data);
+          this.user = response.data;
         })
         .catch(error => {
           console.log(error);
@@ -44,14 +43,15 @@ export default {
 };
 </script>
 
+
 <style lang="scss" scoped>
 
-#log-out {
+#welcome-message {
+    display: inline;
     text-align: center;
-    border: 1px solid black;
-    width: 20%;
+    width: 50%;
     margin: 5%;
-    float: right;
+    float: left;
     font-size: 1em;
     
 }

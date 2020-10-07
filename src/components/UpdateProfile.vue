@@ -11,7 +11,7 @@
     <textarea id="bio-input" v-model="bio"></textarea>
     <p>Birthday</p>
     <input type="text" id="birthdate-input" v-model="birthdate" />
-    <h2 @click="updateProfile">Update</h2>
+    <button @click="updateProfile">Update</button>
     <h3>{{ updateStatus }}</h3>
   </div>
 </template>

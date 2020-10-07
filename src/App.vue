@@ -1,9 +1,11 @@
 <template>
   <div id="app">
     <page-header> </page-header>
+    <welcome-user> </welcome-user>
+    <logout v-if="!loginToken"> </logout>
     <navbar> </navbar>
     <router-view />
-
+   
     <div id="footer">
       Website by Kaylie Seltenrich
     </div>
@@ -13,12 +15,16 @@
 <script>
 import Navbar from "./components/Navbar.vue";
 import PageHeader from "./components/Header.vue";
+import WelcomeUser from "./components/WelcomeUser.vue"
+import Logout from "./components/Logout.vue";
 
 export default {
   name: "app",
   components: {
     Navbar,
-    PageHeader
+    PageHeader,
+    Logout,
+    WelcomeUser
   }
 };
 </script>
