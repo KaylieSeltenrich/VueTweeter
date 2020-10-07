@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="welcome-message">Welcome {{ user[0].username }}</div>
+    <div id="welcome-message">Welcome, {{ user }}</div>
   </div>
 </template>
 
@@ -11,7 +11,7 @@ import cookies from "vue-cookies";
 export default {
   data() {
     return {
-      user: {},
+      user: "",
     };
   },
   mounted: function() {
@@ -33,7 +33,7 @@ export default {
         })
         .then(response => {
           console.log(response.data);
-          this.user = response.data;
+          this.user = response.data[0].username;
         })
         .catch(error => {
           console.log(error);
@@ -45,14 +45,11 @@ export default {
 
 
 <style lang="scss" scoped>
-
 #welcome-message {
-    display: inline;
-    text-align: center;
-    width: 50%;
-    margin: 5%;
-    float: left;
-    font-size: 1em;
-    
+  text-align: center;
+  float: left;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-top: 2%;
 }
 </style>

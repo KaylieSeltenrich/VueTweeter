@@ -1,6 +1,6 @@
 <template>
-  <div v-if="loginToken">
-    <div id="container">
+  <div>
+    <div class="container" v-if="loginToken">
       <update-profile> </update-profile>
       <view-following> </view-following>
       <delete-profile> </delete-profile>
@@ -38,8 +38,5 @@ export default {
   width: 100%;
 }
 
-#container {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-}
+
 </style>

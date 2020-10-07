@@ -1,23 +1,28 @@
 <template>
   <div>
-    <h2 @click="getFollowingTweets">People you follow Tweets:</h2>
-    <h3 v-for="followsTweet in followsTweets" :key="followsTweet.tweetId">
+    <h1 class="header">People you follow Tweets:</h1>
+    <div v-for="followsTweet in followsTweets" :key="followsTweet.tweetId">
       {{ followsTweet.username }} <br />
 
       {{ followsTweet.content }} <br />
 
       {{ followsTweet.createdAt }} <br />
-    </h3>
+    
+      <like-tweet> </like-tweet>
+    </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
 import cookies from "vue-cookies";
+import LikeTweet from "../components/LikeTweet.vue";
 
 export default {
   name: "following-tweets",
-
+  components: {
+    LikeTweet
+  },
   data() {
     return {
       userId: cookies.get("user"),
@@ -25,7 +30,9 @@ export default {
       followsTweets: []
     };
   },
-
+  mounted: function() {
+    this.getFollowingTweets();
+  },
   methods: {
     getTweets: function() {
       this.$store.dispatch("getAllTweets");

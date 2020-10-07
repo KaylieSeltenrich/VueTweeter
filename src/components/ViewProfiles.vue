@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 @click="showProfiles">Discover Profiles:</h2>
+    <h1 class="header" @click="showProfiles">Discover Profiles:</h1>
     <h3 v-for="user in users" :key="user.userId">
       {{ user.username }} <br />
       {{ user.email }} <br />

@@ -39,29 +39,6 @@ export default new Vuex.Store({
           console.log(error);
         });
     },
-
-    likeTweet: function () {
-      axios
-        .request({
-          url: "https://tweeterest.ml/#/docs/tweet-likes",
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "X-Api-Key": "SVzuhkqP5JrStTsfETYXW6UQZs0UV95ENy1VscJoZ3L5P"
-          },
-          data: {
-          loginToken: this.userId,
-          tweetId: "",
-          }
-        })
-        .then(response => {
-          console.log(response);
-        })
-        .catch(error => {
-          console.log(error);
-        });
-    }
-
   },
 
   getters: {

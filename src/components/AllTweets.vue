@@ -1,15 +1,15 @@
 <template>
   <div>
-    <h2>All Tweets:</h2>
-    <h3 v-for="tweet in allTweets" :key="tweet.tweetId">
+    <h1 class="header">All Tweets:</h1>
+    <div v-for="tweet in allTweets" :key="tweet.tweetId">
       {{ tweet.username }} <br />
       
       {{ tweet.content }} <br />
 
       {{ tweet.createdAt }} <br />
     
-    <like-tweet> </like-tweet>
-    </h3>
+    <like-tweet :tweetId="tweet.tweetId"> </like-tweet>
+    </div>
   </div>
 </template>
 

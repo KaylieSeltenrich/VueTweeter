@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Update Profile:</h1>
+    <h1 class="header">Update Profile:</h1>
     <p>Email</p>
     <input type="text" id="email-input" v-model="email" />
     <p>Username</p>
@@ -11,8 +11,8 @@
     <textarea id="bio-input" v-model="bio"></textarea>
     <p>Birthday</p>
     <input type="text" id="birthdate-input" v-model="birthdate" />
-    <button @click="updateProfile">Update</button>
-    <h3>{{ updateStatus }}</h3>
+    <button class="button" @click="updateProfile">Update</button>
+    <h1>{{ updateStatus }}</h1>
   </div>
 </template>
 
@@ -66,5 +66,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 
 </style>

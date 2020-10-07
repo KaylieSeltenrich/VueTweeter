@@ -1,13 +1,10 @@
 <template>
   <div>
-    <h2 @click="viewFollowing">View People you Follow:</h2>
-    <h3 v-for="follow in follows" :key="follow.userId">
+    <h1 v-on:click="viewFollowing()" id="view" class="header">View People you Follow:</h1>
+    <div v-for="follow in follows" :key="follow.userId">
       {{ follow.username }} <br />
       {{ follow.email }} <br />
-      <h3 @click="unFollow(follow.userId)">Un-Follow this user</h3>
-    </h3>
-    <div v-for="followsTweet in followsTweets" :key="followsTweet.tweetId">
-      <p>{{ followsTweet.content }}</p>
+      <button @click="unFollow(follow.userId)">Un-Follow this user</button>
     </div>
   </div>
 </template>
@@ -75,4 +72,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 </style>

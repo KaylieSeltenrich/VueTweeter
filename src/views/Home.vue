@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="container">
     <div v-if="loginToken">
       <create-tweets> </create-tweets>
     </div>
     <div v-if="!loginToken">
-    <p> Please sign up or log in to continue. </p>
+      <p>Please sign up or log in to continue.</p>
     </div>
   </div>
 </template>
@@ -34,7 +34,6 @@ export default {
 * {
   margin: 0%;
   padding: 0%;
-  
 }
 
 p {

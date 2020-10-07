@@ -1,16 +1,16 @@
 <template>
   <div>
-    <h2>Create Tweet:</h2>
+    <h1 class="header">Create Tweet:</h1>
     <textarea
       id="tweet-input"
       v-model="content"
       placeholder="200 characters max"
     ></textarea>
     <br />
-    <button @click="createTweet">Submit</button>
+    <button class="button" @click="createTweet">Submit</button>
 
-    <h2>Your Tweets:</h2>
-    <h3 v-for="tweet in tweets" :key="tweet.tweetId">
+    <h1 class="header">Your Tweets:</h1>
+    <div v-for="tweet in tweets" :key="tweet.tweetId">
       {{ tweet.username }} <br />
 
       {{ tweet.content }} <br />
@@ -18,13 +18,13 @@
       {{ tweet.createdAt }} <br />
 
       <textarea v-model="tweet.content"> </textarea> <br />
-      <button @click="updateTweet(tweet.content, tweet.tweetId)">
+      <button class="button" @click="updateTweet(tweet.content, tweet.tweetId)">
         Edit Tweet
       </button>
-      <button @click="deleteTweet(tweet.tweetId)">
+      <button class="button" @click="deleteTweet(tweet.tweetId)">
         Delete Tweet
       </button>
-    </h3>
+    </div>
   </div>
 </template>
 

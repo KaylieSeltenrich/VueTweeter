@@ -33,12 +33,10 @@ export default {
   grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
   font-size: 1.5em;
   background-color: rgb(70, 144, 230);
-  min-height:2rem;
   width: 100%;
   text-align: center;
   align-content: center;
-  position: sticky;
-  bottom: 0%;
+  max-height: 10vh;
 
   a {
     text-decoration: none;

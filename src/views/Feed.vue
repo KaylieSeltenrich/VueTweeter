@@ -1,8 +1,7 @@
 <template>
   <div>
     <div v-if="loginToken">
-    <h1>Feed</h1>
-    <following-tweets> </following-tweets>
+      <following-tweets> </following-tweets>
     </div>
   </div>
 </template>

@@ -1,12 +1,12 @@
 <template>
   <div>
-    <h2>Delete your account:</h2>
+    <h1 class="header">Delete your account:</h1>
     <p>Password</p>
     <input type="password" id="password-delete" v-model="password" />
 
-    <h2 v-if="!showDelete" @click="showDelete = true">
+    <button class="button" v-if="!showDelete" @click="showDelete = true">
       Click here to delete your account
-    </h2>
+    </button>
     <h3 v-if="showDelete" @click="deleteProfile">Confirm</h3>
 
     {{ updateStatus }}
@@ -60,5 +60,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 </style>

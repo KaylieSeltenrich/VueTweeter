@@ -14,7 +14,6 @@ import axios from "axios";
 import cookies from "vue-cookies";
 
 export default {
-
   data() {
     return {
       email: "",
@@ -57,12 +56,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 div {
   text-align: center;
   position: relative;
   top: 20vh;
   bottom: 20vh;
 }
-
 </style>
