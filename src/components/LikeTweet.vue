@@ -1,7 +1,18 @@
 <template>
-  <div>
-    <img id="heart" @click="likeTweet" src="../assets/likeicon.svg" />
-    <h4> Number of likes: {{likeNumber.length}} </h4>
+  <div id="like-container">
+    <img
+      v-if="!isLiked"
+      id="heart"
+      @click="likeTweet"
+      src="../assets/likeicon.svg"
+    />
+    <img
+      v-else
+      id="unlikeheart"
+      @click="deleteLikeTweet"
+      src="../assets/dislikeicon.svg"
+    />
+    <div>Likes: {{ tweetLikes.length }}</div>
   </div>
 </template>
 
@@ -11,11 +22,12 @@ import cookies from "vue-cookies";
 
 export default {
   name: "like-tweet",
-data() {
-  return {
-   likeNumber: [],
-  }
-},
+  data() {
+    return {
+      tweetLikes: [],
+      isLiked: false
+    };
+  },
   props: {
     tweetId: {
       type: Number
@@ -43,6 +55,30 @@ data() {
         })
         .then(response => {
           console.log(response);
+          this.isLiked = true;
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    },
+
+    deleteLikeTweet: function() {
+      axios
+        .request({
+          url: "https://tweeterest.ml/api/tweet-likes",
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            "X-Api-Key": "SVzuhkqP5JrStTsfETYXW6UQZs0UV95ENy1VscJoZ3L5P"
+          },
+          data: {
+            loginToken: cookies.get("session"),
+            tweetId: this.tweetId
+          }
+        })
+        .then(response => {
+          console.log(response);
+          this.isLiked = false;
         })
         .catch(error => {
           console.log(error);
@@ -64,7 +100,14 @@ data() {
         })
         .then(response => {
           console.log(response);
-          this.likeNumber = response.data
+          this.tweetLikes = response.data;
+
+          for (let i = 0; i < this.tweetLikes.length; i++) {
+            if (cookies.get("user") == this.tweetLikes[i].userId) {
+              this.isLiked = true;
+              return;
+            }
+          }
         })
         .catch(error => {
           console.log(error);
@@ -76,6 +119,15 @@ data() {
 
 <style lang="scss" scoped>
 #heart {
-  width: 5%;
+  width: 15%;
+}
+
+#unlikeheart {
+  width: 15%;
+}
+
+#like-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 </style>

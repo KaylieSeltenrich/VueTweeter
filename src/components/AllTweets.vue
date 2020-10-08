@@ -3,18 +3,22 @@
     <h1 class="header">All Tweets:</h1>
     <div v-for="tweet in allTweets" :key="tweet.tweetId">
       {{ tweet.username }} <br />
-      
+
       {{ tweet.content }} <br />
 
       {{ tweet.createdAt }} <br />
-    
-    <like-tweet :tweetId="tweet.tweetId"> </like-tweet>
+
+      <div id="likecommentcontainer">
+        <comment> </comment>
+        <like-tweet :tweetId="tweet.tweetId"> </like-tweet>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import LikeTweet from "../components/LikeTweet.vue";
+import Comment from "../components/Comment.vue";
 
 export default {
   name: "all-tweets",
@@ -24,8 +28,9 @@ export default {
   },
 
   components: {
-  LikeTweet,
-},
+    LikeTweet,
+    Comment
+  },
 
   computed: {
     allTweets() {
@@ -41,6 +46,10 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped>
-
+<style lang="scss" scoped>
+#likecommentcontainer {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+ 
+}
 </style>

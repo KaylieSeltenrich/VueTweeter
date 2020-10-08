@@ -45,12 +45,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 #log-out {
-   
-    padding: 2%;
-    float: right;
-    font-size: 0.9em;
-    
+  padding: 2%;
+  float: right;
+  font-size: 0.9em;
 }
 </style>

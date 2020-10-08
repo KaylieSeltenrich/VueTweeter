@@ -44,6 +44,7 @@ export default {
           cookies.set("session", response.data.loginToken);
           cookies.set("user", response.data.userId);
           this.$router.push("/");
+        
         })
         .catch(error => {
           //SHOW USER LOGIN FAILURE

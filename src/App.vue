@@ -44,6 +44,7 @@ export default {
 }
 
 #footer {
+  position: sticky;
   text-align: center;
   bottom: 0;
   width: 100%;
@@ -51,6 +52,7 @@ export default {
   font-size: 1.5em;
   background-color: rgb(70, 144, 230);
   color: white;
+
 }
 
 .button {

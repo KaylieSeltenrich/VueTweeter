@@ -1,9 +1,9 @@
 <template>
-  <div class="container">
+  <div>
     <div v-if="loginToken">
       <create-tweets> </create-tweets>
     </div>
-    <div v-if="!loginToken">
+    <div id="loggedout" v-if="!loginToken">
       <p>Please sign up or log in to continue.</p>
     </div>
   </div>
@@ -34,9 +34,12 @@ export default {
 * {
   margin: 0%;
   padding: 0%;
+  height: 100vh;
 }
 
-p {
+#loggedout {
+  position: fixed;
+  top: 50%;
   font-size: 1.5em;
   text-align: center;
   margin: 5%;
