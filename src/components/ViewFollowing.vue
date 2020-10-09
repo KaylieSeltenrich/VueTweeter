@@ -1,11 +1,16 @@
 <template>
   <div>
-    <h1 v-on:click="viewFollowing()" id="view" class="header">View People you Follow:</h1>
+    <h1 @click="viewFollowing" id="view" class="header">
+      View People you Follow:
+    </h1>
     <div v-for="follow in follows" :key="follow.userId">
       {{ follow.username }} <br />
-      {{ follow.email }} <br />
       <button @click="unFollow(follow.userId)">Un-Follow this user</button>
     </div>
+    <h1 @click="viewFollowers" class="header"> View Followers: </h1>
+    <div v-for="follower in followers" :key="follower.userId">
+      {{follower.username}}
+      </div>
   </div>
 </template>
 
@@ -19,7 +24,8 @@ export default {
   data() {
     return {
       userId: "",
-      follows: []
+      follows: [],
+      followers: [],
     };
   },
   methods: {
@@ -44,7 +50,29 @@ export default {
           console.log(error);
         });
     },
-
+   
+     viewFollowers: function(){
+         axios
+        .request({
+          url: "https://tweeterest.ml/api/followers",
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            "X-Api-Key": "SVzuhkqP5JrStTsfETYXW6UQZs0UV95ENy1VscJoZ3L5P"
+          },
+          params: {
+            userId: cookies.get("user")
+          }
+        })
+        .then(response => {
+          console.log(response.data);
+          this.followers = response.data;
+        })
+        .catch(error => {
+          console.log(error);
+        });
+     },
+    
     unFollow: function(followId) {
       console.log(followId);
       axios
@@ -72,5 +100,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 </style>

@@ -1,9 +1,12 @@
 <template>
-  <div>
+  <div class="pagecontainer">
     <div class="container" v-if="loginToken">
       <update-profile> </update-profile>
       <view-following> </view-following>
       <delete-profile> </delete-profile>
+    </div>
+    <div class="loggedout" v-else>
+     You shouldn't be here! Please Login or Signup to access this page.
     </div>
   </div>
 </template>
@@ -32,11 +35,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-* {
-  margin: 0%;
-  padding: 0%;
-  width: 100%;
-}
 
 
 </style>

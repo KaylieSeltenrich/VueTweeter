@@ -1,7 +1,10 @@
 <template>
-  <div>
+  <div class="pagecontainer">
     <div v-if="loginToken">
       <following-tweets> </following-tweets>
+    </div>
+    <div class="loggedout" v-else>
+     You shouldn't be here! Please Login or Signup to access this page.
     </div>
   </div>
 </template>

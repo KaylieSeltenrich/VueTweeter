@@ -39,12 +39,13 @@ export default {
 </script>
 
 <style lang="scss">
-#app {
-  height: 100vh;
+* {
+  margin: 0%;
+  padding: 0%;
 }
 
 #footer {
-  position: sticky;
+  position: fixed;
   text-align: center;
   bottom: 0;
   width: 100%;
@@ -52,7 +53,6 @@ export default {
   font-size: 1.5em;
   background-color: rgb(70, 144, 230);
   color: white;
-
 }
 
 .button {
@@ -68,17 +68,45 @@ export default {
   margin-bottom: 3%;
 }
 
+.pagecontainer {
+  margin-bottom: 8vh;
+}
 
 .container {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
   height: 100vh;
   background-color: white;
+}
+
+.loggedout {
+  position: fixed;
+  padding: 5%;
+  bottom: 40%;
+  font-size: 1.5em;
+  text-align: center;
 }
 
 #header-container {
   position: sticky;
   top: 0;
   background-color: white;
+}
+
+.login-and-signup {
+  text-align: center;
+
+  p {
+    font-size: 1.5em;
+    margin: 2vh;
+  }
+
+  h2 {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-size: 1.3em;
+    margin-top: 5vh;
+    margin-left: 35vw;
+    margin-right: 35vw;
+    padding: 2%;
+    border: 1px solid black;
+  }
 }
 </style>

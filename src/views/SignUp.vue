@@ -1,6 +1,8 @@
 <template>
-  <div>
+  <div class="pagecontainer">
+    <div class="login-and-signup">
     <signup-form> </signup-form>
+    </div>
   </div>
 </template>
 

@@ -1,15 +1,15 @@
 <template>
   <div>
-    <p>Email</p>
-    <input type="text" id="email-input" v-model="email" />
-    <p>Username</p>
-    <input type="text" id="username-input" v-model="username" />
-    <p>Password</p>
-    <input type="password" id="password-input" v-model="password" />
-    <p>Bio</p>
-    <textarea id="bio-input" v-model="bio"></textarea>
-    <p>Birthday</p>
-    <input type="text" id="birthdate-input" v-model="birthdate" />
+    <p>Email:</p>
+    <input type="text" id="email-input" class="centertext" v-model="email" />
+    <p>Username:</p>
+    <input type="text" id="username-input" class="centertext" v-model="username" />
+    <p>Password:</p>
+    <input type="password" id="password-input" class="centertext" v-model="password" />
+    <p>Bio:</p>
+    <textarea id="bio-input" class="centertext" v-model="bio"></textarea>
+    <p>Birthday:</p>
+    <input type="text" id="birthdate-input" class="centertext" v-model="birthdate" placeholder="YYYY-MM-DD" />
     <h2 @click="signupUser">Sign Up</h2>
   </div>
 </template>
@@ -62,4 +62,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.centertext {
+  text-align: center;
+}
+p {
+  text-align: left;
+  margin-left: 25%;
+}
+#bio-input {
+  height: 10vh;
+  width: 50%;
+}
 </style>

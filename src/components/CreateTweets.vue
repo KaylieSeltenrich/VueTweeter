@@ -33,6 +33,7 @@ import axios from "axios";
 import cookies from "vue-cookies";
 export default {
   name: "create-tweet",
+  
   mounted: function() {
     this.getTweets();
   },

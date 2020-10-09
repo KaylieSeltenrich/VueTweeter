@@ -7,18 +7,20 @@ Vue.use(Vuex, axios);
 
 export default new Vuex.Store({
   state: {
-    loginToken: cookies.get("session"),
     userId: cookies.get("user"),
     allTweets: [],
     followTweets: [],
+    loginToken: cookies.get("session"),
   },
+
   mutations: {
     updateAllTweets: function (state, data) {
       state.allTweets = data
     },
-    updateLoginStatus: function () {
-   
-    },
+
+    loginStatus: function (state,data) {
+      state.loginToken = data
+    }
 
   },
   actions: {

@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="pagecontainer">
     <div v-if="loginToken">
       <create-tweets> </create-tweets>
     </div>
-    <div id="loggedout" v-if="!loginToken">
-      <p>Please sign up or log in to continue.</p>
+    <div class="loggedout" v-if="!loginToken">
+      <p>Please Login or Signup to continue.</p>
     </div>
   </div>
 </template>
@@ -30,18 +30,4 @@ export default {
 
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500&display=swap");
-
-* {
-  margin: 0%;
-  padding: 0%;
-  height: 100vh;
-}
-
-#loggedout {
-  position: fixed;
-  top: 50%;
-  font-size: 1.5em;
-  text-align: center;
-  margin: 5%;
-}
 </style>

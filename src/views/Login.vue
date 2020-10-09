@@ -1,11 +1,13 @@
 <template>
-  <div>
-    <p>Email</p>
-    <input type="text" id="email-input" v-model="email" />
-    <p>Password</p>
-    <input type="password" id="password-input" v-model="password" />
-    <h2 @click="loginUser">Login</h2>
-    <h3>{{ loginStatus }}</h3>
+  <div class="pagecontainer">
+    <div class="login-and-signup">
+      <p>Email:</p>
+      <input type="text" id="email-input" class="centertext" v-model="email" />
+      <p>Password:</p>
+      <input type="password" id="password-input" class="centertext" v-model="password" />
+      <h2 @click="loginUser">Login</h2>
+      <h3>{{ loginStatus }}</h3>
+    </div>
   </div>
 </template>
 
@@ -44,7 +46,6 @@ export default {
           cookies.set("session", response.data.loginToken);
           cookies.set("user", response.data.userId);
           this.$router.push("/");
-        
         })
         .catch(error => {
           //SHOW USER LOGIN FAILURE
@@ -57,10 +58,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-div {
+.centertext {
   text-align: center;
-  position: relative;
-  top: 20vh;
-  bottom: 20vh;
+}
+p {
+  text-align: left;
+  margin-left: 25%;
 }
 </style>
