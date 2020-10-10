@@ -45,7 +45,8 @@ export default {
           this.loginStatus = "Success";
           cookies.set("session", response.data.loginToken);
           cookies.set("user", response.data.userId);
-          this.$router.push("/");
+          this.$store.commit("loginUpdate",response.data.loginToken);
+          this.$router.push("/profile");
         })
         .catch(error => {
           //SHOW USER LOGIN FAILURE

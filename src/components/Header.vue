@@ -7,7 +7,13 @@
 
 <script>
 export default {
-  name: "page-header"
+  name: "page-header",
+
+  computed: {
+    loginToken() {
+      return this.$store.state.loginToken;
+    }
+  }
 };
 </script>
 
@@ -38,5 +44,4 @@ export default {
 #icon {
   height: 10vh;
 }
-
 </style>

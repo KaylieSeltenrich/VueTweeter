@@ -10,15 +10,16 @@
 </template>
 
 <script>
-import cookies from "vue-cookies";
 
 export default {
   name: "navigation-bar",
-  data() {
-    return {
-      loginToken: cookies.get("session")
-    };
-  }
+
+  computed: {
+    loginToken() {
+      return this.$store.state.loginToken 
+    }
+  },
+ 
 };
 </script>
 

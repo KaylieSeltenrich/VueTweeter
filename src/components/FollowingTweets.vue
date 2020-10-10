@@ -7,8 +7,6 @@
       {{ followsTweet.content }} <br />
 
       {{ followsTweet.createdAt }} <br />
-    
-      <like-tweet> </like-tweet>
     </div>
   </div>
 </template>
@@ -16,13 +14,10 @@
 <script>
 import axios from "axios";
 import cookies from "vue-cookies";
-import LikeTweet from "../components/LikeTweet.vue";
 
 export default {
   name: "following-tweets",
-  components: {
-    LikeTweet
-  },
+  components: {},
   data() {
     return {
       userId: cookies.get("user"),

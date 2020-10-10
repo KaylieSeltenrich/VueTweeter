@@ -10,6 +10,7 @@ import cookies from "vue-cookies";
 
 export default {
   name: "logout-user",
+
   data() {
     return {
       loginToken: cookies.get("session")
@@ -34,7 +35,9 @@ export default {
           console.log(response);
           cookies.remove("session");
           cookies.remove("user");
-          this.$router.push("/");
+          this.$store.commit("loginDelete");
+          this.$router.push("/login");
+         
         })
         .catch(error => {
           console.log(error);

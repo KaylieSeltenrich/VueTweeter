@@ -18,9 +18,14 @@ export default new Vuex.Store({
       state.allTweets = data
     },
 
-    loginStatus: function (state,data) {
+    loginUpdate: function (state,data) {
       state.loginToken = data
+    },
+
+    loginDelete: function (state) {
+      state.loginToken = undefined
     }
+
 
   },
   actions: {

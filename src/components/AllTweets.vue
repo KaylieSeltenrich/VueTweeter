@@ -2,24 +2,14 @@
   <div class="pagecontainer">
     <h1 class="header">All Tweets:</h1>
     <div v-for="tweet in allTweets" :key="tweet.tweetId">
-      {{ tweet.username }} <br />
-
-      {{ tweet.content }} <br />
-
-      {{ tweet.createdAt }} <br />
-
-      <div id="likecommentcontainer">
-        <comments :tweetId="tweet.tweetId"> </comments>
-        <like-tweet :tweetId="tweet.tweetId"> </like-tweet>
-      </div>
+    <page-tweet :tweetObject="tweet"> </page-tweet>
     </div>
   </div>
 </template>
 
 <script>
-import LikeTweet from "../components/LikeTweet.vue";
-import Comments from "../components/Comments.vue";
 
+import PageTweet from "../components/Tweets.vue"
 export default {
   name: "all-tweets",
 
@@ -28,8 +18,7 @@ export default {
   },
 
   components: {
-    LikeTweet,
-    Comments
+    PageTweet
   },
 
   computed: {
@@ -51,6 +40,7 @@ export default {
 #likecommentcontainer {
   display: grid;
   grid-template-columns: 1fr 2fr;
+
  
 }
 </style>
