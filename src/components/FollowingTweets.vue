@@ -1,28 +1,26 @@
 <template>
   <div>
     <h1 class="header">People you follow Tweets:</h1>
-    <div v-for="followsTweet in followsTweets" :key="followsTweet.tweetId">
-      {{ followsTweet.username }} <br />
-
-      {{ followsTweet.content }} <br />
-
-      {{ followsTweet.createdAt }} <br />
-    </div>
+    <follow-tweets v-if="ready" :tweets="tweets"> </follow-tweets>
   </div>
 </template>
 
 <script>
 import axios from "axios";
 import cookies from "vue-cookies";
+import FollowTweets from "../components/FollowTweets.vue";
 
 export default {
   name: "following-tweets",
-  components: {},
+  components: {
+    FollowTweets
+  },
   data() {
     return {
       userId: cookies.get("user"),
       follows: [],
-      followsTweets: []
+      tweets: [],
+      ready: false
     };
   },
   mounted: function() {
@@ -49,9 +47,25 @@ export default {
         .then(response => {
           console.log(response.data);
           this.follows = response.data;
-          this.followsTweets = this.$store.getters.getFollowingTweets(
-            this.follows
-          );
+          for (let i = 0; i < this.follows.length; i++) {
+            console.log(i);
+            axios
+              .request({
+                url: "https://tweeterest.ml/api/tweets",
+                method: "GET",
+                headers: {
+                  "Content-Type": "application/json",
+                  "X-Api-Key": "SVzuhkqP5JrStTsfETYXW6UQZs0UV95ENy1VscJoZ3L5P"
+                },
+                params: {
+                  userId: this.follows[i].userId
+                }
+              })
+              .then(response => {
+                this.tweets = this.tweets.concat(response.data);
+                this.ready = true;
+              });
+          }
         })
         .catch(error => {
           console.log(error);

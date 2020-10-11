@@ -32,7 +32,8 @@ export default {
   props: {
     tweetId: {
       type: Number
-    }
+    },
+    
   },
 
   mounted: function() {
