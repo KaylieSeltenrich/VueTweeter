@@ -171,13 +171,14 @@ export default {
 }
 
 #your-tweets-container {
-  height: 80vh;
   width: 100%;
-  overflow-y: scroll;
-  top: 5vh;
 }
 
 #tweets-container {
   width: 100%;
+}
+
+textarea {
+  resize: none;
 }
 </style>

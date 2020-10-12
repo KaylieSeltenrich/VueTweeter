@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <h1 @click="viewFollowers" class="header">View Followers:</h1>
-    <div v-for="follower in followers" :key="follower.userId">
+  <div id="viewfollowers-container">
+    <h1 class="profile-header">Your Followers:</h1>
+    <div id= "followers-container" v-for="follower in followers" :key="follower.userId">
       {{ follower.username }}
     </div>
   </div>
@@ -19,7 +19,9 @@ export default {
       followers: []
     };
   },
-
+  mounted: function() {
+    this.viewFollowers();
+  },
   methods: {
     viewFollowers: function() {
       axios
@@ -47,4 +49,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#viewfollowers-container {
+    overflow-y: scroll;
+    max-height: 30vh;
+    margin-top: 10%;
+}
+
+#followers-container {
+    margin-left: 5%;
+}
+
+.header {
+    margin-left: 5%;
+}
 </style>

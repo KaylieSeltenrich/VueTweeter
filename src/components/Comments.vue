@@ -27,8 +27,9 @@
 
       <like-comment :commentId="comment.commentId"> </like-comment>
 
-      <div v-if="comment.userId == userId">
+      <div id="edit-comment-container" v-if="comment.userId == userId">
         <textarea
+          id="edit-comment-input"
           v-model="comment.content"
           placeholder="150 characters max"
         ></textarea>
@@ -37,11 +38,10 @@
           class="button"
           @click="editComment(comment.content, comment.commentId)"
         >
-          Edit Comment
+          Edit
         </button>
-
         <button class="button" @click="deleteComment(comment.commentId)">
-          Delete Comment
+          Delete
         </button>
       </div>
     </div>
@@ -184,5 +184,19 @@ export default {
 #comment-content {
   margin-left: 5%;
   margin-bottom: 10%;
+}
+
+textarea {
+  resize: none;
+}
+
+#edit-comment-container {
+  margin: 5%;
+}
+
+#edit-comment-input {
+  height: 8vh;
+  width: 100%;
+  overflow: hidden;
 }
 </style>

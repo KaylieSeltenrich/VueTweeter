@@ -36,12 +36,14 @@ export default {
 #title {
   font-family: "Spartan", sans-serif;
   text-align: center;
-  font-size: 2em;
+  font-size: 2.5em;
   font-weight: bold;
   color: rgb(70, 144, 230);
+  margin-right: 5%;
 }
 
 #icon {
   height: 10vh;
+  padding: 5%;
 }
 </style>

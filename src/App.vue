@@ -75,7 +75,7 @@ export default {
   margin-bottom: 8vh;
   margin-left: 3vh;
   margin-right: 3vh;
-  min-height: 80vh;
+  min-height: 90vh;
 }
 
 .container {
@@ -121,7 +121,6 @@ export default {
 .tweets-container {
   border: 1px solid black;
   margin-bottom: 5%;
-  overflow: scroll;
 }
 
 .tweet-container {
@@ -151,6 +150,8 @@ export default {
 .comment-container {
   width: 85%;
   border: 1px solid black;
+  overflow-x:scroll;
+  margin: 5%;
 }
 
 .comment {
@@ -158,4 +159,19 @@ export default {
   position: relative;
   bottom: 7.5vh;
 }
+
+.input {
+  width: 35vw;
+}
+
+.profile-header {
+  font-weight: bolder;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: black;
+  font-size: 1.3em;
+  margin-bottom: 3%;
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
 </style>

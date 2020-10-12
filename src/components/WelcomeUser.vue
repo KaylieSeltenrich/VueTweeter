@@ -50,6 +50,7 @@ export default {
   float: left;
   font-size: 1.3em;
   font-weight: bold;
-  margin-top: 2%;
+  margin-top: 5%;
+  margin-left: 3%;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button class="button" @click="showProfiles">Discover Profiles </button>
+    <button class="button" @click="showProfiles">Discover Profiles</button>
     <div id="profile-container">
     <div id="profileuser-container" v-for="user in users" :key="user.userId">
       {{ user.username }} <br />

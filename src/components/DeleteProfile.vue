@@ -1,23 +1,36 @@
 <template>
   <div>
-    <h1 class="header">Delete account:</h1>
-    <p>Password</p>
-    <input type="password" id="password-delete" v-model="password" />
+    <h1 class="profile-header">Delete account:</h1>
+    <p id="password-text">Password</p>
+    <input
+      type="password"
+      class="input"
+      id="password-delete"
+      v-model="password"
+    />
 
     <button class="button" v-if="!showDelete" @click="showDelete = true">
-      Click here to delete your account
+      Delete
     </button>
-    <button class="button" v-if="showDelete" @click="deleteProfile">Confirm</button>
+    <button class="button" v-if="showDelete" @click="deleteProfile">
+      Confirm
+    </button>
 
     {{ updateStatus }}
+
+    <view-followers> </view-followers>
   </div>
 </template>
 
 <script>
 import axios from "axios";
 import cookies from "vue-cookies";
+import ViewFollowers from "../components/ViewFollowers.vue";
 
 export default {
+  components: {
+    ViewFollowers
+  },
   data() {
     return {
       password: "",
@@ -61,6 +74,19 @@ export default {
 
 <style lang="scss" scoped>
 .button {
-  margin-right: 5%;
+  margin: 5%;
+  width: 90%;
+}
+.input {
+  width: 90%;
+  margin: 5%;
+}
+
+div {
+  height: 50vh;
+}
+
+#password-text {
+  margin-left: 5%;
 }
 </style>

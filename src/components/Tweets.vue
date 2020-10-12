@@ -1,14 +1,14 @@
 <template>
   <div>
-   <p class="tweet-username"> {{ tweetObject.username }} tweets: </p>
+    <p class="tweet-username">{{ tweetObject.username }} tweets:</p>
 
-    <p class="tweet-content">  {{ tweetObject.content }}  </p>
+    <p class="tweet-content">{{ tweetObject.content }}</p>
 
     Date Posted: {{ tweetObject.createdAt }} <br />
-<div id="comment-liketweet-container">
-    <like-tweet :tweetId="tweetObject.tweetId"> </like-tweet>
-    <comments :tweetId="tweetObject.tweetId"> </comments>
-</div>
+    <div id="comment-liketweet-container">
+      <like-tweet :tweetId="tweetObject.tweetId"> </like-tweet>
+      <comments :tweetId="tweetObject.tweetId"> </comments>
+    </div>
   </div>
 </template>
 
@@ -39,6 +39,5 @@ div {
 #comment-liketweet-container {
   margin-top: 5%;
 }
-
 
 </style>

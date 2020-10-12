@@ -132,6 +132,6 @@ export default {
   grid-template-columns: 1fr 1fr;
   justify-items: center;
   width: 100%;
-  column-gap: 5%;
+  margin-bottom: 5%;
 }
 </style>

@@ -52,5 +52,6 @@ export default {
   padding: 2%;
   float: right;
   font-size: 0.9em;
+  margin: 3%;
 }
 </style>

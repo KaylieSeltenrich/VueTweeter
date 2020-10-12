@@ -1,16 +1,22 @@
 <template>
-  <div>
-    <h1 class="header">Update Profile:</h1>
-    <p>Email</p>
-    <input type="text" id="email-input" v-model="email" />
-    <p>Username</p>
-    <input type="text" id="username-input" v-model="username" />
-    <p>Password</p>
-    <input type="password" id="password-input" v-model="password" />
-    <p>Bio</p>
-    <textarea id="bio-input" v-model="bio"></textarea>
-    <p>Birthday</p>
-    <input type="text" id="birthdate-input" v-model="birthdate" /> <br />
+  <div id="updateprofile-container">
+    <h1 class="profile-header">Update Profile:</h1>
+    <p class="profile-text">Email</p>
+    <input type="text" class="input" id="email-input" v-model="email" />
+    <p class="profile-text">Username</p>
+    <input type="text" class="input" id="username-input" v-model="username" />
+    <p class="profile-text">Password</p>
+    <input
+      type="password"
+      class="input"
+      id="password-input"
+      v-model="password"
+    />
+    <p class="profile-text">Bio</p>
+    <textarea id="bio-input" class="input" v-model="bio"></textarea>
+    <p class="profile-text">Birthday</p>
+    <input type="text" class="input" id="birthdate-input" v-model="birthdate" />
+    <br />
     <button class="button" @click="updateProfile">Update</button>
     <h1>{{ updateStatus }}</h1>
   </div>
@@ -67,5 +73,24 @@ export default {
 
 <style lang="scss" scoped>
 
+.button {
+  margin: 5%;
+  width: 90%;
+}
+.input {
+  width: 90%;
+  margin: 5%;
+}
 
+.profile-text {
+  margin-left: 5%;
+}
+
+textarea {
+  resize: none;
+}
+
+#updateprofile-container {
+  margin-right: 10%;
+}
 </style>

@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <h1 @click="viewFollowing" class="header">
-      View People you Follow:
+  <div id="viewfollowing-container">
+    <h1 class="profile-header">
+      People you Follow:
     </h1>
-    <div v-for="follow in follows" :key="follow.userId">
+    <div id="follow-container" v-for="follow in follows" :key="follow.userId">
       {{ follow.username }} <br />
       <button @click="unFollow(follow.userId)">Un-Follow this user</button>
     </div>
@@ -16,7 +16,9 @@ import cookies from "vue-cookies";
 
 export default {
   name: "view-following",
-
+  mounted: function() {
+    this.viewFollowing();
+  },
   data() {
     return {
       userId: "",
@@ -74,4 +76,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#viewfollowing-container {
+  overflow-y: scroll;
+  height: 30vh;
+  width: 100%;
+  grid-column: span 2;
+  border-top: 1px solid black;
+  margin-top: 5%;
+  margin-bottom: 8vh;
+}
+#follow-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 5%;
+  margin-right: 5%;
+  margin-left: 5%;
+}
 </style>

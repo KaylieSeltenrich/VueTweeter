@@ -1,11 +1,10 @@
 <template>
   <div class="pagecontainer">
-    <div class="container" v-if="loginToken">
+    <div v-if="loginToken">
       <div id="profile-container">
         <update-profile> </update-profile>
         <delete-profile> </delete-profile>
-      <view-following> </view-following>
-      <view-followers> </view-followers>
+        <view-following> </view-following>
       </div>
     </div>
     <div class="loggedout" v-else>
@@ -18,7 +17,6 @@
 import UpdateProfile from "../components/UpdateProfile.vue";
 import DeleteProfile from "../components/DeleteProfile.vue";
 import ViewFollowing from "../components/ViewFollowing.vue";
-import ViewFollowers from "../components/ViewFollowers.vue";
 import cookies from "vue-cookies";
 
 export default {
@@ -28,7 +26,6 @@ export default {
     UpdateProfile,
     DeleteProfile,
     ViewFollowing,
-    ViewFollowers
   },
 
   data() {
@@ -42,11 +39,11 @@ export default {
 <style lang="scss" scoped>
 #profile-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 10%;
-  row-gap: 5%;
+  grid-template-columns: 1.5fr 1fr;
+  border: 1px solid black;
 }
+
 .pagecontainer {
-  height: 40vh;
+  height: 90vh;
 }
 </style>
