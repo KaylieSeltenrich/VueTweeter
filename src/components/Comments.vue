@@ -2,38 +2,47 @@
   <div>
     <img
       @click="showComments = !showComments"
-      id="comment"
+      class="comment"
       src="../assets/commenticon.svg"
     />
 
-    <div id="comments-container" v-if="showComments == true">
+    <div v-if="showComments == true">
       <textarea
         id="comment-input"
         v-model="content"
         placeholder="150 characters max"
       >
-      </textarea>  <br />
-      <button @click="makeComment">Submit Comment</button>  <br />
-      <button @click="getComment">Get Comments</button>
+      </textarea>
+      <br />
+      <button class="button" @click="makeComment">Submit Comment</button>
+      <button class="button" @click="getComment">Get Comments</button>
+    </div>
+    <div
+      class="comment-container"
+      v-for="comment in comments"
+      :key="comment.commentId"
+    >
+      <p id="comment-username">{{ comment.username }} says:</p>
+      <p id="comment-content">{{ comment.content }}</p>
 
-      <div v-for="comment in comments" :key="comment.commentId">
-        <p>{{ comment.username }}</p>
-        <p>{{ comment.content }}</p>
+      <like-comment :commentId="comment.commentId"> </like-comment>
 
-        <like-comment :commentId="comment.commentId"> </like-comment>
+      <div v-if="comment.userId == userId">
+        <textarea
+          v-model="comment.content"
+          placeholder="150 characters max"
+        ></textarea>
+        <br />
+        <button
+          class="button"
+          @click="editComment(comment.content, comment.commentId)"
+        >
+          Edit Comment
+        </button>
 
-        <div v-if="comment.userId == userId">
-          <textarea
-            v-model="comment.content"
-            placeholder="150 characters max"
-          ></textarea>  <br />
-          <button @click="editComment(comment.content, comment.commentId)">
-            Edit Comment
-          </button> <br />
-          <button @click="deleteComment(comment.commentId)">
-            Delete Comment
-          </button>
-        </div>
+        <button class="button" @click="deleteComment(comment.commentId)">
+          Delete Comment
+        </button>
       </div>
     </div>
   </div>
@@ -157,7 +166,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#comment {
-  width: 15%;
+#comment-input {
+  position: relative;
+  bottom: 3vh;
+  width: 100%;
+  height: 10vh;
+}
+
+#comment-username {
+  font-family: "Spartan", sans-serif;
+  font-size: 1.2em;
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-bottom: 5%;
+}
+
+#comment-content {
+  margin-left: 5%;
+  margin-bottom: 10%;
 }
 </style>

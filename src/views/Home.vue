@@ -30,4 +30,5 @@ export default {
 
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500&display=swap");
+
 </style>

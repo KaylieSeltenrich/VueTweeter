@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="pagecontainer">
     <h1 class="header">People you follow Tweets:</h1>
     <follow-tweets v-if="ready" :tweets="tweets"> </follow-tweets>
   </div>
@@ -76,4 +76,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 </style>

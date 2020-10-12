@@ -10,7 +10,7 @@
     <p>Bio</p>
     <textarea id="bio-input" v-model="bio"></textarea>
     <p>Birthday</p>
-    <input type="text" id="birthdate-input" v-model="birthdate" />
+    <input type="text" id="birthdate-input" v-model="birthdate" /> <br />
     <button class="button" @click="updateProfile">Update</button>
     <h1>{{ updateStatus }}</h1>
   </div>

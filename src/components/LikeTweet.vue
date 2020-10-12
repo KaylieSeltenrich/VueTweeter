@@ -1,5 +1,5 @@
 <template>
-  <div id="like-container">
+  <div class="like-container">
     <img
       v-if="!isLiked"
       id="heart"
@@ -32,8 +32,7 @@ export default {
   props: {
     tweetId: {
       type: Number
-    },
-    
+    }
   },
 
   mounted: function() {
@@ -128,10 +127,5 @@ export default {
   width: 15%;
 }
 
-#like-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-items: right;
- 
-}
+
 </style>

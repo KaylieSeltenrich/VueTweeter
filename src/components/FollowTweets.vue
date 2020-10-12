@@ -1,11 +1,13 @@
 <template>
-  <div>
-    <div v-for="tweet in tweets" :key="tweet.tweetId">
-      {{tweet.username}} <br />
-      {{tweet.content}} <br />
-      {{tweet.createdAt}} <br />
-    <like-tweet :tweetId="tweet.tweetId"> </like-tweet>
-    <comments :tweetId="tweet.tweetId"> </comments>
+  <div class="page-container">
+    <div class="tweets-container" v-for="tweet in tweets" :key="tweet.tweetId">
+      <div class="tweet-container">
+        <p class="tweet-username">{{ tweet.username }}</p>
+        <p class="tweet-content">{{ tweet.content }}</p>
+        <p>Date Posted: {{ tweet.createdAt }}</p>
+        <like-tweet :tweetId="tweet.tweetId"> </like-tweet>
+        <comments :tweetId="tweet.tweetId"> </comments>
+      </div>
     </div>
   </div>
 </template>
@@ -14,7 +16,7 @@
 import cookies from "vue-cookies";
 import axios from "axios";
 import LikeTweet from "../components/LikeTweet.vue";
-import Comments from "../components/Comments.vue"
+import Comments from "../components/Comments.vue";
 
 export default {
   name: "follow-tweets",
@@ -27,20 +29,18 @@ export default {
     tweets: {
       type: Array,
       required: true
-    },
-
-
+    }
   },
 
   mounted: function() {
-      this.getTweets();
+    this.getTweets();
   },
 
- data() {
-     return {
-        followtweets: [],
-     }
- },
+  data() {
+    return {
+      followtweets: []
+    };
+  },
 
   methods: {
     getTweets: function() {
@@ -69,4 +69,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+div {
+  margin-top: 5%;
+}
+
 </style>

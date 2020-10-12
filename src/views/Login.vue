@@ -40,7 +40,7 @@ export default {
           }
         })
         .then(response => {
-          //CHECK IF LOGIN TOKEN SENT
+  
           console.log(response);
           this.loginStatus = "Success";
           cookies.set("session", response.data.loginToken);
@@ -49,7 +49,6 @@ export default {
           this.$router.push("/profile");
         })
         .catch(error => {
-          //SHOW USER LOGIN FAILURE
           console.log(error);
           this.loginStatus = "Error";
         });

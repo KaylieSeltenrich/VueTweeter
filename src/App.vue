@@ -59,6 +59,8 @@ export default {
   padding: 2%;
   color: black;
   font-weight: bold;
+  
+  
 }
 .header {
   font-weight: bolder;
@@ -69,7 +71,11 @@ export default {
 }
 
 .pagecontainer {
+  margin-top: 2vh;
   margin-bottom: 8vh;
+  margin-left: 3vh;
+  margin-right: 3vh;
+  min-height: 80vh;
 }
 
 .container {
@@ -89,6 +95,7 @@ export default {
   position: sticky;
   top: 0;
   background-color: white;
+  z-index: 100;
 }
 
 .login-and-signup {
@@ -108,5 +115,47 @@ export default {
     padding: 2%;
     border: 1px solid black;
   }
+}
+
+
+.tweets-container {
+  border: 1px solid black;
+  margin-bottom: 5%;
+  overflow: scroll;
+}
+
+.tweet-container {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.tweet-username {
+  font-size: 1.2em;
+  font-family: "Spartan", sans-serif;
+  margin-bottom: 5%;
+  font-weight: bold;
+}
+
+.tweet-content {
+  font-size: 1.2em;
+  margin-bottom: 5%;
+}
+
+.like-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: right;
+  height: 5vh;
+}
+
+.comment-container {
+  width: 85%;
+  border: 1px solid black;
+}
+
+.comment {
+  width: 10%;
+  position: relative;
+  bottom: 7.5vh;
 }
 </style>

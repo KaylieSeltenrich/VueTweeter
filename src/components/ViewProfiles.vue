@@ -1,13 +1,15 @@
 <template>
   <div>
-    <h1 class="header" @click="showProfiles">Discover Profiles:</h1>
-    <h3 v-for="user in users" :key="user.userId">
+    <button class="button" @click="showProfiles">Discover Profiles </button>
+    <div id="profile-container">
+    <div id="profileuser-container" v-for="user in users" :key="user.userId">
       {{ user.username }} <br />
       {{ user.email }} <br />
       {{ user.birthdate }} <br />
       {{ user.bio }} <br />
-      <h3 @click="followUser(user.userId)"> Follow User </h3>
-    </h3>
+      <button class="button" @click="followUser(user.userId)"> Follow User </button>
+    </div>
+    </div>
   </div>
 </template>
 
@@ -73,5 +75,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#profile-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: auto;
+  max-height: 40vh;
+  overflow: scroll;
+}
+#profileuser-container {
+  display: grid;
+  grid-template-rows: 1fr;
+  margin: 3%;
+  font-size: 0.9em;
+  border: 1px solid black;
+  padding: 5%;
+}
+
 
 </style>

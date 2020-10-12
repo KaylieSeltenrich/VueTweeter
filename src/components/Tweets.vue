@@ -1,15 +1,14 @@
 <template>
   <div>
-    {{ tweetObject.username }} <br />
+   <p class="tweet-username"> {{ tweetObject.username }} tweets: </p>
 
-    {{ tweetObject.content }} <br />
+    <p class="tweet-content">  {{ tweetObject.content }}  </p>
 
-    {{ tweetObject.createdAt }} <br />
-
-    <div id="likecommentcontainer">
-      <comments :tweetId="tweetObject.tweetId"> </comments>
-      <like-tweet :tweetId="tweetObject.tweetId"> </like-tweet>
-    </div>
+    Date Posted: {{ tweetObject.createdAt }} <br />
+<div id="comment-liketweet-container">
+    <like-tweet :tweetId="tweetObject.tweetId"> </like-tweet>
+    <comments :tweetId="tweetObject.tweetId"> </comments>
+</div>
   </div>
 </template>
 
@@ -20,8 +19,8 @@ import Comments from "../components/Comments.vue";
 export default {
   name: "page-tweet",
   components: {
-      LikeTweet,
-      Comments
+    LikeTweet,
+    Comments
   },
   props: {
     tweetObject: {
@@ -33,4 +32,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+div {
+  margin-top: 5%;
+}
+
+#comment-liketweet-container {
+  margin-top: 5%;
+}
+
+
 </style>

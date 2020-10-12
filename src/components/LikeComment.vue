@@ -12,9 +12,8 @@
       @click="deleteLikeComment"
       src="../assets/dislikeicon.svg"
     />
-    
-    <div> Comment likes: {{ commentLikes.length }}</div>
-    
+
+    <div>Likes: {{ commentLikes.length }}</div>
   </div>
 </template>
 
@@ -37,7 +36,7 @@ export default {
   },
 
   mounted: function() {
-      this.getLikedComments();
+    this.getLikedComments();
   },
 
   methods: {
@@ -131,5 +130,8 @@ export default {
 #like-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  width: 100%;
+  column-gap: 5%;
 }
 </style>
