@@ -37,7 +37,8 @@ export default {
   width: 100%;
   text-align: center;
   align-content: center;
-  max-height: 10vh;
+  max-height: 5vh;
+  margin-top: 5%;
 
   a {
     text-decoration: none;
@@ -45,4 +46,24 @@ export default {
     margin: 5%;
   }
 }
+
+
+@media only screen and (min-width: 1000px) {
+ 
+ 
+
+#navbar {
+ margin: 0%;
+ 
+  a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5em;
+    margin: 5%;
+  }
+}
+}
+
+
+
 </style>

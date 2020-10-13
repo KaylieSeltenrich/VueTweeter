@@ -59,8 +59,6 @@ export default {
   padding: 2%;
   color: black;
   font-weight: bold;
-  
-  
 }
 .header {
   font-weight: bolder;
@@ -107,7 +105,8 @@ export default {
   }
 
   h2 {
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
     font-size: 1.3em;
     margin-top: 5vh;
     margin-left: 35vw;
@@ -116,7 +115,6 @@ export default {
     border: 1px solid black;
   }
 }
-
 
 .tweets-container {
   border: 1px solid black;
@@ -150,7 +148,7 @@ export default {
 .comment-container {
   width: 85%;
   border: 1px solid black;
-  overflow-x:scroll;
+  overflow-x: scroll;
   margin: 5%;
 }
 
@@ -172,6 +170,18 @@ export default {
   margin-bottom: 3%;
   margin-top: 5%;
   margin-left: 5%;
+}
+
+//Desktop Size
+
+@media only screen and (min-width: 1000px) {
+  #header-container {
+   position: sticky;
+   top: 0;
+   width: 100%;
+   background-color:white;
+   height: auto;
+  }
 }
 
 </style>

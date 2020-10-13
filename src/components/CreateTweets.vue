@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div id="create-tweet-container">
+    <div>
+   <div id="create-tweet-container">
       <h1 class="header">Create Tweet:</h1>
       <textarea
         id="tweet-input"
@@ -12,40 +12,14 @@
         Submit
       </button>
     </div>
-    <div id="your-tweets-container">
-      <h1 class="header">Your Tweets:</h1>
-      <div
-        class="tweets-container"
-        v-for="tweet in tweets"
-        :key="tweet.tweetId"
-      >
-        <div class="tweet-container">
-          <p class="tweet-username">{{ tweet.username }}</p>
-          <p class="tweet-content">{{ tweet.content }}</p>
-          <p>Date posted: {{ tweet.createdAt }}</p>
-        </div>
-        <textarea id="edit-tweet" v-model="tweet.content"> </textarea> <br />
-        <div id="button-container">
-          <button
-            class="button"
-            @click="updateTweet(tweet.content, tweet.tweetId)"
-          >
-            Edit Tweet
-          </button>
-          <button class="button" @click="deleteTweet(tweet.tweetId)">
-            Delete Tweet
-          </button>
-        </div>
-      </div>
     </div>
-  </div>
 </template>
 
 <script>
 import axios from "axios";
 import cookies from "vue-cookies";
-export default {
-  name: "create-tweet",
+    export default {
+         name: "create-tweets",
 
   mounted: function() {
     this.getTweets();
@@ -79,54 +53,15 @@ export default {
         })
         .then(response => {
           console.log(response);
+          document.getElementById("submit-tweet").innerText = "Success!"
+          this.$router.go(0);
         })
         .catch(error => {
           console.log(error);
+          document.getElementById("submit-tweet").innerText = "Error!"
         });
     },
-    updateTweet: function(content, id) {
-      axios
-        .request({
-          url: "https://tweeterest.ml/api/tweets",
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-            "X-Api-Key": "SVzuhkqP5JrStTsfETYXW6UQZs0UV95ENy1VscJoZ3L5P"
-          },
-          data: {
-            loginToken: cookies.get("session"),
-            content: content,
-            tweetId: id
-          }
-        })
-        .then(response => {
-          console.log(response);
-        })
-        .catch(error => {
-          console.log(error);
-        });
-    },
-    deleteTweet: function(id) {
-      axios
-        .request({
-          url: "https://tweeterest.ml/api/tweets",
-          method: "DELETE",
-          headers: {
-            "Content-Type": "application/json",
-            "X-Api-Key": "SVzuhkqP5JrStTsfETYXW6UQZs0UV95ENy1VscJoZ3L5P"
-          },
-          data: {
-            loginToken: cookies.get("session"),
-            tweetId: id
-          }
-        })
-        .then(response => {
-          console.log(response);
-        })
-        .catch(error => {
-          console.log(error);
-        });
-    },
+   
     getTweets: function() {
       this.$store.dispatch("getAllTweets");
     }
@@ -180,5 +115,9 @@ export default {
 
 textarea {
   resize: none;
+}
+
+@media only screen and (min-width: 1000px) {
+
 }
 </style>

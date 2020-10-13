@@ -11,7 +11,7 @@ import cookies from "vue-cookies";
 export default {
   data() {
     return {
-      user: "",
+      user: ""
     };
   },
   mounted: function() {
@@ -52,5 +52,18 @@ export default {
   font-weight: bold;
   margin-top: 5%;
   margin-left: 3%;
+}
+
+//Desktop Size
+@media only screen and (min-width: 1000px) {
+#welcome-message {
+ position: relative;
+ bottom: 3vh;
+ left: 50%;
+ width: 50%;
+ font-size: 2em;
+
+}
+  
 }
 </style>

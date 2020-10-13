@@ -14,7 +14,7 @@
       >
       </textarea>
       <br />
-      <button class="button" @click="makeComment">Submit Comment</button>
+      <button id="submit-comment" class="button" @click="makeComment">Submit Comment</button>
       <button class="button" @click="getComment">Get Comments</button>
     </div>
     <div
@@ -34,13 +34,13 @@
           placeholder="150 characters max"
         ></textarea>
         <br />
-        <button
-          class="button"
+        <button id="edit-comment"
+          class="button" 
           @click="editComment(comment.content, comment.commentId)"
         >
           Edit
         </button>
-        <button class="button" @click="deleteComment(comment.commentId)">
+        <button id="delete-comment" class="button" @click="deleteComment(comment.commentId)">
           Delete
         </button>
       </div>
@@ -89,9 +89,11 @@ export default {
         })
         .then(response => {
           console.log(response);
+            document.getElementById("submit-comment").innerText = "Success!"
         })
         .catch(error => {
           console.log(error);
+          document.getElementById("submit-comment").innerText = "Error!"
         });
     },
 
@@ -134,9 +136,11 @@ export default {
         })
         .then(response => {
           console.log(response);
+            document.getElementById("edit-comment").innerText = "Success!"
         })
         .catch(error => {
           console.log(error);
+            document.getElementById("edit-comment").innerText = "Error!"
         });
     },
 
@@ -156,9 +160,11 @@ export default {
         })
         .then(response => {
           console.log(response);
+          document.getElementById("delete-comment").innerText = "Success!"
         })
         .catch(error => {
           console.log(error);
+            document.getElementById("delete-comment").innerText = "Error!"
         });
     }
   }

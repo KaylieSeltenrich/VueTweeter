@@ -37,7 +37,6 @@ export default {
           cookies.remove("user");
           this.$store.commit("loginDelete");
           this.$router.push("/login");
-         
         })
         .catch(error => {
           console.log(error);
@@ -53,5 +52,19 @@ export default {
   float: right;
   font-size: 0.9em;
   margin: 3%;
+}
+
+@media only screen and (min-width: 1000px) {
+  #log-out {
+    margin: 0;
+    margin-right: 1%;
+    padding: 0;
+    position: relative;
+    bottom: 2vh;
+  }
+  .button {
+    width: 10%;
+    height: 5vh;
+  }
 }
 </style>

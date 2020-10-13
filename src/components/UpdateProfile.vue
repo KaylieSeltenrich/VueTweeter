@@ -17,8 +17,8 @@
     <p class="profile-text">Birthday</p>
     <input type="text" class="input" id="birthdate-input" v-model="birthdate" />
     <br />
-    <button class="button" @click="updateProfile">Update</button>
-    <h1>{{ updateStatus }}</h1>
+    <button id="update-profile" class="button" @click="updateProfile">Update</button>
+  
   </div>
 </template>
 
@@ -40,7 +40,7 @@ export default {
   },
   methods: {
     updateProfile: function() {
-      this.updateStatus = "Loading";
+      
       axios
         .request({
           url: "https://tweeterest.ml/api/users",
@@ -60,11 +60,13 @@ export default {
         })
         .then(response => {
           console.log(response);
-          this.updateStatus = "Success";
+           document.getElementById("update-profile").innerText = "Success!"
+         
         })
         .catch(error => {
           console.log(error);
-          this.updateStatus = "Error";
+           document.getElementById("update-profile").innerText = "Error!"
+        
         });
     }
   }

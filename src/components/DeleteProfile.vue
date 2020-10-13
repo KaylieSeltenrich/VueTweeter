@@ -12,11 +12,10 @@
     <button class="button" v-if="!showDelete" @click="showDelete = true">
       Delete
     </button>
-    <button class="button" v-if="showDelete" @click="deleteProfile">
+    <button id="delete-profile" class="button" v-if="showDelete" @click="deleteProfile">
       Confirm
     </button>
 
-    {{ updateStatus }}
 
     <view-followers> </view-followers>
   </div>
@@ -59,13 +58,13 @@ export default {
         })
         .then(response => {
           console.log(response);
-          this.updateStatus = "Success";
+          document.getElementById("delete-profile").innerText = "Success!"
           this.$router.push("/signup");
           cookies.remove("session", response.data.loginToken);
         })
         .catch(error => {
           console.log(error);
-          this.updateStatus = "Error";
+           document.getElementById("delete-profile").innerText = "Error!"
         });
     }
   }
