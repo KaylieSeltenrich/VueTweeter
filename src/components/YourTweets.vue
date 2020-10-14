@@ -10,7 +10,7 @@
         <div class="tweet-container">
           <p class="tweet-username">{{ tweet.username }}</p>
           <p class="tweet-content">{{ tweet.content }}</p>
-          <p>Date posted: {{ tweet.createdAt }}</p>
+          <p class="date-posted">Date posted: {{ tweet.createdAt }}</p>
         </div>
         <textarea class="edit-tweet" v-model="tweet.content"> </textarea> <br />
         <div class="button-container">
@@ -21,8 +21,7 @@
             Edit Tweet
           </button>
           <button
-            id="delete-tweet"
-            class="button"
+            class="delete-tweet button"
             @click="deleteTweet(tweet.tweetId)"
           >
             Delete Tweet
@@ -71,11 +70,9 @@ export default {
         })
         .then(response => {
           console.log(response);
-          document.getElementById("update-tweet").innerText = "Success!";
         })
         .catch(error => {
           console.log(error);
-          document.getElementById("update-tweet").innerText = "Error!";
         });
     },
     deleteTweet: function(id) {
@@ -157,15 +154,15 @@ textarea {
 }
 
 @media only screen and (min-width: 1000px) {
+  .your-tweets-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2%;
+  }
 
-.your-tweets-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 2%;
-}
-
-.edit-tweet{
-font-size: 1.5em;
-}
+  .edit-tweet {
+    font-size: 1.5em;
+  }
+  
 }
 </style>

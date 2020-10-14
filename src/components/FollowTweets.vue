@@ -4,7 +4,7 @@
       <div class="tweet-container">
         <p class="tweet-username">{{ tweet.username }}</p>
         <p class="tweet-content">{{ tweet.content }}</p>
-        <p>Date Posted: {{ tweet.createdAt }}</p>
+        <p class="date-posted"> Date Posted: {{ tweet.createdAt }}</p>
         <like-tweet :tweetId="tweet.tweetId"> </like-tweet>
         <comments :tweetId="tweet.tweetId"> </comments>
       </div>

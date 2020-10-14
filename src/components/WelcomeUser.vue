@@ -65,10 +65,12 @@ export default {
 @media only screen and (min-width: 1000px) {
 #welcome-message {
  position: relative;
- bottom: 3vh;
+ top:4vh;
  left: 50%;
  width: 50%;
  font-size: 2em;
+ float: none;
+ margin: 0;
 
 }
   

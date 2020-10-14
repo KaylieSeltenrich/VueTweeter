@@ -60,29 +60,41 @@ export default {
 <style lang="scss" scoped>
 .input-text {
   text-align: center;
+  height: 3vh;
 }
 p {
   text-align: left;
+}
+.pagecontainer{
+  position: fixed;
+  top: 30%;
+  margin-left: 25%;
+}
+h2 {
+  width: 50%;
   margin-left: 25%;
 }
 
 @media only screen and (min-width: 1000px) {
  .input-text {
   text-align: center;
-  width: 50%;
+  width: 80%;
   height: 2vh;
   font-size: 1.5em;
   padding: 10px;
 }
 p {
   text-align: center;
-  margin-right: 25%;
-  font-size: 2em;
+  font-size: 2.5em;
 }
+
 .pagecontainer{
-  position: fixed;
-  width: 100%;
   top: 30%;
+  margin-left: 30%;
+}
+
+h2 {
+  font-size: 1.5em;
 }
 }
 

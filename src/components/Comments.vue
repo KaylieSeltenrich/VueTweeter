@@ -14,8 +14,14 @@
       >
       </textarea>
       <br />
-      <button id="submit-comment" class="button" @click="makeComment">Submit Comment</button>
-      <button class="button" @click="getComment">Get Comments</button>
+      <div id="button-container">
+        <button id="submit-comment" class="button" @click="makeComment">
+          Submit Comment
+        </button>
+        <button id="get-comment" class="button" @click="getComment">
+          Get Comments
+        </button>
+      </div>
     </div>
     <div
       class="comment-container"
@@ -34,18 +40,27 @@
           placeholder="150 characters max"
         ></textarea>
         <br />
-        <button id="edit-comment"
-          class="button" 
+
+        <div id="editdelete-comment-container">
+        <button
+          id="edit-comment"
+          class="button"
           @click="editComment(comment.content, comment.commentId)"
         >
           Edit
         </button>
-        <button id="delete-comment" class="button" @click="deleteComment(comment.commentId)">
+        <button
+          id="delete-comment"
+          class="button"
+          @click="deleteComment(comment.commentId)"
+        >
           Delete
         </button>
+        </div>
+        </div>
+        </div>
       </div>
-    </div>
-  </div>
+
 </template>
 
 <script>
@@ -89,11 +104,11 @@ export default {
         })
         .then(response => {
           console.log(response);
-            document.getElementById("submit-comment").innerText = "Success!"
+          document.getElementById("submit-comment").innerText = "Success!";
         })
         .catch(error => {
           console.log(error);
-          document.getElementById("submit-comment").innerText = "Error!"
+          document.getElementById("submit-comment").innerText = "Error!";
         });
     },
 
@@ -136,11 +151,11 @@ export default {
         })
         .then(response => {
           console.log(response);
-            document.getElementById("edit-comment").innerText = "Success!"
+          document.getElementById("edit-comment").innerText = "Success!";
         })
         .catch(error => {
           console.log(error);
-            document.getElementById("edit-comment").innerText = "Error!"
+          document.getElementById("edit-comment").innerText = "Error!";
         });
     },
 
@@ -160,11 +175,11 @@ export default {
         })
         .then(response => {
           console.log(response);
-          document.getElementById("delete-comment").innerText = "Success!"
+          document.getElementById("delete-comment").innerText = "Success!";
         })
         .catch(error => {
           console.log(error);
-            document.getElementById("delete-comment").innerText = "Error!"
+          document.getElementById("delete-comment").innerText = "Error!";
         });
     }
   }
@@ -205,13 +220,57 @@ textarea {
   width: 100%;
   overflow: hidden;
 }
-
-@media only screen and (min-width: 1000px) {
+.button {
+  width: 80%;
+  margin: 5%;
+}
 
 .comment {
-  width: 6%;
-  margin: 0;
-}
+  margin-top: 6px;
 }
 
+@media only screen and (min-width: 1000px) {
+  .comment {
+    width: 6%;
+    margin: 0;
+  }
+
+  .button {
+    display: grid;
+    width: 80%;
+  }
+
+  #comment-input {
+    font-size: 2em;
+  }
+
+  #button-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    justify-items: center;
+    margin-bottom: 5%;
+  }
+
+  #editdelete-comment-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    justify-items: center;
+    margin-bottom: 5%;
+  }
+
+  #comment-username {
+    font-size: 1.8em;
+  }
+
+  #comment-content {
+  font-size: 1.5em;
+  text-align: center;
+  }
+
+  #edit-comment-input{
+    font-size: 1.5em;
+  }
+}
 </style>

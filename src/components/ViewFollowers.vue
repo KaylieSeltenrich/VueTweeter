@@ -68,10 +68,10 @@ export default {
     overflow-y: scroll;
     max-height: 50vh;
     margin-top: 10%;
-    font-size: 1.5em;
+    font-size: 2em;
 }
 .profile-header {
-  font-size: 1.5em;
+  font-size: 1em;
 }
 }
 </style>

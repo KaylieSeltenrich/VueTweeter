@@ -5,7 +5,7 @@
     </h1>
     <div id="follow-container" v-for="follow in follows" :key="follow.userId">
       {{ follow.username }} <br />
-      <button @click="unFollow(follow.userId)">Un-Follow this user</button>
+      <button class="button" @click="unFollow(follow.userId)">Un-Follow</button>
     </div>
   </div>
 </template>
@@ -93,5 +93,25 @@ export default {
   margin-top: 5%;
   margin-right: 5%;
   margin-left: 5%;
+}
+
+
+@media only screen and (min-width: 1000px) {
+ #follow-container {
+  font-size: 2em;
+}
+.button {
+  font-size: 0.8em;
+}
+
+#viewfollowing-container {
+  overflow-y: scroll;
+  width: 100%;
+  height: 50vh;
+  grid-column: span 1;
+  border: none;
+ margin-left: 2%;
+}
+
 }
 </style>

@@ -80,41 +80,47 @@ export default {
 <style lang="scss" scoped>
 .centertext {
   text-align: center;
+  height: 3vh;
 }
 p {
-  text-align: left;
-  margin-left: 25%;
+  text-align: center;
+
 }
 #bio-input {
   height: 10vh;
-  width: 50%;
+  width: 100%;
+}
+h2 {
+  width: 60%;
+  margin: 0;
+  margin-left: 10%;
+  margin-top: 25%;
+  padding: 5%;
 }
 
 @media only screen and (min-width: 1000px) {
   div {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    width: 90%;
-    margin-left: 5%;
-    margin-top: 5%;
+    margin-top: 10%;
   }
   .centertext {
     text-align: center;
     font-size: 1.5em;
     padding: 10px;
     margin-bottom: 5%;
-    width: 80%;
+    width: 100%;
   }
 
   #bio-input {
     height: 10vh;
-    width: 80%;
+    width: 100%;
   }
   .login-and-signup {
     text-align: center;
 
     p {
-      font-size: 2em;
+      font-size: 2.5em;
       margin: 0;
       text-align: center;
     }
@@ -123,8 +129,9 @@ p {
       bottom: 25%;
       position: relative;
       font-size: 1.5em;
-      width: 20%;
+      width: 90%;
       grid-column: 1 / span 2;
+    
     }
   }
 }

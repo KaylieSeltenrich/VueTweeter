@@ -20,14 +20,14 @@ export default {
 
 <style lang="scss" scoped>
 .pagecontainer {
+  position: fixed;
   text-align: center;
+  margin-left: 30%;
 }
 
+
 @media only screen and (min-width: 1000px) {
-  .pagecontainer {
-    position: fixed;
-    width: 100%;
-  }
+
  .login-and-signup{
    margin: 0;
    padding: 0;

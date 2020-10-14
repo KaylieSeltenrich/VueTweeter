@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button class="button" @click="showProfiles">Discover Profiles</button>
+    <button id="discover-profiles" class="button" @click="showProfiles">Discover Profiles</button>
     <div id="profile-container">
     <div id="profileuser-container" v-for="user in users" :key="user.userId">
       {{ user.username }} <br />
@@ -91,5 +91,20 @@ export default {
   padding: 5%;
 }
 
+@media only screen and (min-width: 1000px) {
+#profileuser-container {
+  margin: 3%;
+  font-size: 1.5em;
+}
 
+.button {
+  width: 50%;
+  margin-top: 5%;
+}
+
+#discover-profiles {
+ margin-left: 25%;
+
+}
+}
 </style>

@@ -10,16 +10,14 @@
 </template>
 
 <script>
-
 export default {
   name: "navigation-bar",
 
   computed: {
     loginToken() {
-      return this.$store.state.loginToken 
+      return this.$store.state.loginToken;
     }
-  },
- 
+  }
 };
 </script>
 
@@ -47,26 +45,17 @@ export default {
   }
 }
 
-
 @media only screen and (min-width: 1000px) {
- 
- 
+  #navbar {
+    margin: 0%;
+    margin-top: 5%;
 
-#navbar {
- margin: 0%;
- margin-top: 5%;
- 
-  a {
-    text-decoration: none;
-    color: white;
-    font-size: 1.5em;
-    margin: 5%;
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 1.5em;
+      margin: 5%;
+    }
   }
-
-  
 }
-}
-
-
-
 </style>

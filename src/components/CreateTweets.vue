@@ -121,6 +121,7 @@ textarea {
 
 .create-tweet-container {
   text-align: center;
+  padding: 2%;
 }
 
 .tweet-input {
@@ -132,7 +133,7 @@ textarea {
 .submit-tweet {
   width: 30%;
   margin: 0;
-  font-size: 0.8em;
+  font-size: 1.2em;
   padding: 1%;
 }
 

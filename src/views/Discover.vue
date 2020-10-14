@@ -46,4 +46,12 @@ export default {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
+@media only screen and (min-width: 1000px) {
+ .button{
+   width: 50%;
+   margin-left: 20%;
+ }
+  
+}
 </style>

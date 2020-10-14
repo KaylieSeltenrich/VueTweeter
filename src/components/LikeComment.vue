@@ -13,7 +13,7 @@
       src="../assets/dislikeicon.svg"
     />
 
-    <div>Likes: {{ commentLikes.length }}</div>
+    <div id="comment-likes">Likes: {{ commentLikes.length }}</div>
   </div>
 </template>
 
@@ -133,5 +133,18 @@ export default {
   justify-items: center;
   width: 100%;
   margin-bottom: 5%;
+}
+
+@media only screen and (min-width: 1000px) {
+#heart {
+  width: 10%;
+}
+
+#unlikeheart {
+  width: 10%;
+}
+#comment-likes{
+  font-size: 1.3em;
+}
 }
 </style>

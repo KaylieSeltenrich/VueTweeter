@@ -45,6 +45,9 @@ export default {
 }
 
 #footer {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: center;
   position: fixed;
   text-align: center;
   bottom: 0;
@@ -175,31 +178,43 @@ export default {
 //Desktop Size
 
 @media only screen and (min-width: 1000px) {
-  #header-container {
-   position: sticky;
-   top: 0;
-   width: 100%;
-   background-color:white;
-   height: auto;
+ 
+  .profile-header {
+    font-size: 2em;
+    text-align: center;
   }
 
-  .profile-header {
-  font-size: 2em;
-  text-align: center;
-}
+  .header {
+    font-size: 2em;
+    text-align: center;
+  }
 
-.header {
-  font-size: 2em;
-  text-align: center;
-}
+  .loggedout {
+    position: fixed;
+    font-size: 2.5em;
+    text-align: center;
+    width: 90%;
+    margin: 0;
+  }
 
-.loggedout {
-  position: fixed;
-  font-size: 2.5em;
-  text-align: center;
-  width: 90%;
-  margin: 0;
-}
-}
+  .button {
+    padding: 2%;
+    color: black;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
 
+  .tweet-content {
+    font-size: 1.8em;
+    text-align: center;
+  }
+
+  .tweet-username {
+    font-size: 2.3em;
+  }
+
+  .date-posted {
+    font-size: 1.3em;
+  }
+}
 </style>

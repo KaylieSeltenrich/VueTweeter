@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 class="profile-header">Delete account:</h1>
-    <p id="password-text" class="profile-text">Password</p>
+    <p id="password-text" class="profile-text">Password:</p>
     <input
       type="password"
       class="input"
@@ -95,12 +95,12 @@ div {
 
 @media only screen and (min-width: 1000px) {
   .profile-text {
-    font-size: 1.5em;
+    font-size: 2em;
   }
 
   .input {
     width: 90%;
-    height: 2vh;
+    height: 3vh;
     margin: 5%;
   }
 }

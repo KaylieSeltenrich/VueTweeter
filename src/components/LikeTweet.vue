@@ -136,6 +136,14 @@ export default {
 #likes-text{
   font-size: 1.5em;
 }
+
+#heart {
+  width: 10%;
+}
+
+#unlikeheart {
+  width: 10%;
+}
 }
 
 

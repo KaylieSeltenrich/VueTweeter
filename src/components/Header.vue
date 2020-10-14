@@ -2,7 +2,7 @@
   <div id="page-header">
     <img id="icon" src="../assets/squawkericon.svg" alt="squawker icon" />
     <h1 id="title">Squawker</h1>
-    </div>
+  </div>
 </template>
 
 <script>
@@ -34,12 +34,13 @@ export default {
 }
 
 #title {
+  position: relative;
   font-family: "Spartan", sans-serif;
   text-align: center;
   font-size: 2.5em;
   font-weight: bold;
   color: rgb(70, 144, 230);
-  margin-right: 5%;
+  right: 10%;
 }
 
 #icon {
@@ -48,33 +49,25 @@ export default {
   z-index: 101;
 }
 
-
 @media only screen and (min-width: 1000px) {
- 
- 
-#title {
-  font-size: 4em;
-  text-align: center;
-  z-index: 101;
+  #title {
+    font-size: 4em;
+    text-align: center;
+    z-index: 101;
+  }
 
+  #page-header {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    width: 35%;
+    align-items: center;
+    min-height: auto;
+    background-color: white;
+  }
+
+  #icon {
+    height: 15vh;
+    z-index: 101;
+  }
 }
-
-#page-header {
-  display: grid;
-  grid-template-columns: 0.5fr 1fr;
-  width: 35%;
-  align-items: center;
-  min-height: auto;
-  background-color: white;
-}
-
-#icon {
- height: 15vh;
- z-index: 101;
-
-}
-
-
-}
-
 </style>

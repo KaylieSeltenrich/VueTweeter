@@ -4,7 +4,7 @@
 
     <p class="tweet-content">{{ tweetObject.content }}</p>
 
-    Date Posted: {{ tweetObject.createdAt }} <br />
+    <p class="date-posted"> Date Posted: {{ tweetObject.createdAt }}</p> <br />
     <div id="comment-liketweet-container">
       <like-tweet :tweetId="tweetObject.tweetId"> </like-tweet>
       <comments :tweetId="tweetObject.tweetId"> </comments>
@@ -39,5 +39,4 @@ div {
 #comment-liketweet-container {
   margin-top: 5%;
 }
-
 </style>

@@ -76,5 +76,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+@media only screen and (min-width: 1000px) {
+  .header{
+    margin-top: 5%;
+  }
+}
 </style>
