@@ -62,4 +62,16 @@ export default {
 .header {
     margin-left: 5%;
 }
+
+@media only screen and (min-width: 1000px) {
+#viewfollowers-container {
+    overflow-y: scroll;
+    max-height: 50vh;
+    margin-top: 10%;
+    font-size: 1.5em;
+}
+.profile-header {
+  font-size: 1.5em;
+}
+}
 </style>

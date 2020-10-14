@@ -1,7 +1,7 @@
 <template>
   <div class="pagecontainer">
     <div class="login-and-signup">
-    <signup-form> </signup-form>
+      <signup-form> </signup-form>
     </div>
   </div>
 </template>
@@ -19,10 +19,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-div {
+.pagecontainer {
   text-align: center;
-
 }
 
+@media only screen and (min-width: 1000px) {
+  .pagecontainer {
+    position: fixed;
+    width: 100%;
+  }
+ .login-and-signup{
+   margin: 0;
+   padding: 0;
+   width: auto;
+ }
+}
 </style>

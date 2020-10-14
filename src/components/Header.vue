@@ -60,7 +60,6 @@ export default {
 }
 
 #page-header {
-  
   display: grid;
   grid-template-columns: 0.5fr 1fr;
   width: 35%;

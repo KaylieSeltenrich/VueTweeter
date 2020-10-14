@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="welcome-message">Welcome, {{ user }}</div>
+    <div id="welcome-message" v-if="loginToken">Welcome, {{ user }}</div>
   </div>
 </template>
 
@@ -11,8 +11,13 @@ import cookies from "vue-cookies";
 export default {
   data() {
     return {
-      user: ""
+      user: "",
     };
+  },
+   computed: {
+    loginToken() {
+      return this.$store.state.loginToken 
+    }
   },
   mounted: function() {
     this.getUsername();
@@ -33,7 +38,9 @@ export default {
         })
         .then(response => {
           console.log(response.data);
+          this.$store.commit("welcomeUpdate",this.loginToken);
           this.user = response.data[0].username;
+          
         })
         .catch(error => {
           console.log(error);

@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 class="profile-header">Delete account:</h1>
-    <p id="password-text">Password</p>
+    <p id="password-text" class="profile-text">Password</p>
     <input
       type="password"
       class="input"
@@ -12,10 +12,14 @@
     <button class="button" v-if="!showDelete" @click="showDelete = true">
       Delete
     </button>
-    <button id="delete-profile" class="button" v-if="showDelete" @click="deleteProfile">
+    <button
+      id="delete-profile"
+      class="button"
+      v-if="showDelete"
+      @click="deleteProfile"
+    >
       Confirm
     </button>
-
 
     <view-followers> </view-followers>
   </div>
@@ -58,13 +62,13 @@ export default {
         })
         .then(response => {
           console.log(response);
-          document.getElementById("delete-profile").innerText = "Success!"
+          document.getElementById("delete-profile").innerText = "Success!";
           this.$router.push("/signup");
           cookies.remove("session", response.data.loginToken);
         })
         .catch(error => {
           console.log(error);
-           document.getElementById("delete-profile").innerText = "Error!"
+          document.getElementById("delete-profile").innerText = "Error!";
         });
     }
   }
@@ -87,5 +91,17 @@ div {
 
 #password-text {
   margin-left: 5%;
+}
+
+@media only screen and (min-width: 1000px) {
+  .profile-text {
+    font-size: 1.5em;
+  }
+
+  .input {
+    width: 90%;
+    height: 2vh;
+    margin: 5%;
+  }
 }
 </style>

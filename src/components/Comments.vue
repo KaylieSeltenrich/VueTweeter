@@ -205,4 +205,13 @@ textarea {
   width: 100%;
   overflow: hidden;
 }
+
+@media only screen and (min-width: 1000px) {
+
+.comment {
+  width: 6%;
+  margin: 0;
+}
+}
+
 </style>

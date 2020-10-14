@@ -2,9 +2,9 @@
   <div class="pagecontainer">
     <div class="login-and-signup">
       <p>Email:</p>
-      <input type="text" id="email-input" class="centertext" v-model="email" />
+      <input type="text" id="email-input" class="input-text" v-model="email" />
       <p>Password:</p>
-      <input type="password" id="password-input" class="centertext" v-model="password" />
+      <input type="password" id="password-input" class="input-text" v-model="password" />
       <h2 @click="loginUser">Login</h2>
       <h3>{{ loginStatus }}</h3>
     </div>
@@ -46,7 +46,7 @@ export default {
           cookies.set("session", response.data.loginToken);
           cookies.set("user", response.data.userId);
           this.$store.commit("loginUpdate",response.data.loginToken);
-          this.$router.push("/profile");
+          this.$router.push("/home");
         })
         .catch(error => {
           console.log(error);
@@ -58,12 +58,34 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.centertext {
+.input-text {
   text-align: center;
 }
 p {
   text-align: left;
   margin-left: 25%;
 }
+
+@media only screen and (min-width: 1000px) {
+ .input-text {
+  text-align: center;
+  width: 50%;
+  height: 2vh;
+  font-size: 1.5em;
+  padding: 10px;
+}
+p {
+  text-align: center;
+  margin-right: 25%;
+  font-size: 2em;
+}
+.pagecontainer{
+  position: fixed;
+  width: 100%;
+  top: 30%;
+}
+}
+
+
 
 </style>

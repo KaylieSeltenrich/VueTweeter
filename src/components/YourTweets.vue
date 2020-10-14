@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div id="your-tweets-container">
-      <h1 class="header">Your Tweets:</h1>
+    <h1 class="header">Your Tweets:</h1>
+    <div class="your-tweets-container">
       <div
         class="tweets-container"
         v-for="tweet in tweets"
@@ -12,16 +12,19 @@
           <p class="tweet-content">{{ tweet.content }}</p>
           <p>Date posted: {{ tweet.createdAt }}</p>
         </div>
-        <textarea id="edit-tweet" v-model="tweet.content"> </textarea> <br />
-        <div id="button-container">
+        <textarea class="edit-tweet" v-model="tweet.content"> </textarea> <br />
+        <div class="button-container">
           <button
-          id="update-tweet"
-            class="button"
+            class="update-tweet button"
             @click="updateTweet(tweet.content, tweet.tweetId)"
           >
             Edit Tweet
           </button>
-          <button id="delete-tweet" class="button" @click="deleteTweet(tweet.tweetId)">
+          <button
+            id="delete-tweet"
+            class="button"
+            @click="deleteTweet(tweet.tweetId)"
+          >
             Delete Tweet
           </button>
         </div>
@@ -68,11 +71,11 @@ export default {
         })
         .then(response => {
           console.log(response);
-          document.getElementById("update-tweet").innerText = "Success!"
+          document.getElementById("update-tweet").innerText = "Success!";
         })
         .catch(error => {
           console.log(error);
-            document.getElementById("update-tweet").innerText = "Error!"
+          document.getElementById("update-tweet").innerText = "Error!";
         });
     },
     deleteTweet: function(id) {
@@ -91,11 +94,11 @@ export default {
         })
         .then(response => {
           console.log(response);
-          document.getElementById("delete-tweet").innerText = "Success!"
+          document.getElementById("delete-tweet").innerText = "Success!";
         })
         .catch(error => {
           console.log(error);
-          document.getElementById("delete-tweet").innerText = "Error!"
+          document.getElementById("delete-tweet").innerText = "Error!";
         });
     },
     getTweets: function() {
@@ -106,7 +109,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#edit-tweet {
+.edit-tweet {
   width: 80%;
   height: 8vh;
   margin-left: 10%;
@@ -114,7 +117,7 @@ export default {
   margin-bottom: 5%;
 }
 
-#button-container {
+.button-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 5vw;
@@ -123,17 +126,17 @@ export default {
   margin-bottom: 5%;
 }
 
-#tweet-input {
+.tweet-input {
   width: 100%;
   height: 10vh;
 }
 
-#submit-tweet {
+.submit-tweet {
   margin-left: 10%;
   width: 80%;
 }
 
-#create-tweet-container {
+.create-tweet-container {
   padding: 5%;
 }
 
@@ -141,15 +144,28 @@ export default {
   padding: 5%;
 }
 
-#your-tweets-container {
+.your-tweets-container {
   width: 100%;
 }
 
-#tweets-container {
+.tweets-container {
   width: 100%;
 }
 
 textarea {
   resize: none;
+}
+
+@media only screen and (min-width: 1000px) {
+
+.your-tweets-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2%;
+}
+
+.edit-tweet{
+font-size: 1.5em;
+}
 }
 </style>

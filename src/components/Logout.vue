@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button class="button" id="log-out" @click="logOut">Log Out</button>
+    <button class="button" v-if="loginToken" id="log-out" @click="logOut">Log Out</button>
   </div>
 </template>
 
@@ -11,10 +11,10 @@ import cookies from "vue-cookies";
 export default {
   name: "logout-user",
 
-  data() {
-    return {
-      loginToken: cookies.get("session")
-    };
+ computed: {
+    loginToken() {
+      return this.$store.state.loginToken 
+    }
   },
 
   methods: {
@@ -36,7 +36,7 @@ export default {
           cookies.remove("session");
           cookies.remove("user");
           this.$store.commit("loginDelete");
-          this.$router.push("/login");
+          this.$router.push("/home");
         })
         .catch(error => {
           console.log(error);

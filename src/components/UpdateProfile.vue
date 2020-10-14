@@ -15,7 +15,7 @@
     <p class="profile-text">Bio</p>
     <textarea id="bio-input" class="input" v-model="bio"></textarea>
     <p class="profile-text">Birthday</p>
-    <input type="text" class="input" id="birthdate-input" v-model="birthdate" />
+    <input type="text" class="input" id="birthdate-input" placeholder="YYYY/MM/DD" v-model="birthdate" />
     <br />
     <button id="update-profile" class="button" @click="updateProfile">Update</button>
   
@@ -94,5 +94,21 @@ textarea {
 
 #updateprofile-container {
   margin-right: 10%;
+}
+
+@media only screen and (min-width: 1000px) {
+
+#updateprofile-container {
+  margin-right: 10%;
+}
+.profile-text {
+  font-size: 1.5em;
+}
+.input {
+  width: 90%;
+  height: 2vh;
+  margin: 5%;
+}
+
 }
 </style>

@@ -2,7 +2,7 @@
   <div id="navbar">
     <router-link to="/login" v-if="!loginToken">Login </router-link>
     <router-link to="/signup" v-if="!loginToken">Signup </router-link>
-    <router-link to="/" v-if="loginToken"> Home </router-link>
+    <router-link to="/home" v-if="loginToken"> Home </router-link>
     <router-link to="/profile" v-if="loginToken"> Profile </router-link>
     <router-link to="/discover" v-if="loginToken"> Discover </router-link>
     <router-link to="/feed" v-if="loginToken"> Feed </router-link>
@@ -54,6 +54,7 @@ export default {
 
 #navbar {
  margin: 0%;
+ margin-top: 5%;
  
   a {
     text-decoration: none;
@@ -61,6 +62,8 @@ export default {
     font-size: 1.5em;
     margin: 5%;
   }
+
+  
 }
 }
 

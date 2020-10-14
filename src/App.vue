@@ -182,6 +182,24 @@ export default {
    background-color:white;
    height: auto;
   }
+
+  .profile-header {
+  font-size: 2em;
+  text-align: center;
+}
+
+.header {
+  font-size: 2em;
+  text-align: center;
+}
+
+.loggedout {
+  position: fixed;
+  font-size: 2.5em;
+  text-align: center;
+  width: 90%;
+  margin: 0;
+}
 }
 
 </style>

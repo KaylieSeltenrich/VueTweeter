@@ -3,13 +3,29 @@
     <p>Email:</p>
     <input type="text" id="email-input" class="centertext" v-model="email" />
     <p>Username:</p>
-    <input type="text" id="username-input" class="centertext" v-model="username" />
+    <input
+      type="text"
+      id="username-input"
+      class="centertext"
+      v-model="username"
+    />
     <p>Password:</p>
-    <input type="password" id="password-input" class="centertext" v-model="password" />
+    <input
+      type="password"
+      id="password-input"
+      class="centertext"
+      v-model="password"
+    />
     <p>Bio:</p>
     <textarea id="bio-input" class="centertext" v-model="bio"></textarea>
     <p>Birthday:</p>
-    <input type="text" id="birthdate-input" class="centertext" v-model="birthdate" placeholder="YYYY-MM-DD" />
+    <input
+      type="text"
+      id="birthdate-input"
+      class="centertext"
+      v-model="birthdate"
+      placeholder="YYYY-MM-DD"
+    />
     <h2 @click="signupUser">Sign Up</h2>
   </div>
 </template>
@@ -49,9 +65,9 @@ export default {
           }
         })
         .then(response => {
-          console.log(response.data)
+          console.log(response.data);
           cookies.set("session", response.data[0].loginToken);
-          this.$router.push("/");
+          this.$router.push("/home");
         })
         .catch(error => {
           console.log(error);
@@ -72,5 +88,44 @@ p {
 #bio-input {
   height: 10vh;
   width: 50%;
+}
+
+@media only screen and (min-width: 1000px) {
+  div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 5%;
+  }
+  .centertext {
+    text-align: center;
+    font-size: 1.5em;
+    padding: 10px;
+    margin-bottom: 5%;
+    width: 80%;
+  }
+
+  #bio-input {
+    height: 10vh;
+    width: 80%;
+  }
+  .login-and-signup {
+    text-align: center;
+
+    p {
+      font-size: 2em;
+      margin: 0;
+      text-align: center;
+    }
+
+    h2 {
+      bottom: 25%;
+      position: relative;
+      font-size: 1.5em;
+      width: 20%;
+      grid-column: 1 / span 2;
+    }
+  }
 }
 </style>

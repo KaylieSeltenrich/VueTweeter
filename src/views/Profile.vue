@@ -46,4 +46,20 @@ export default {
 .pagecontainer {
   height: 90vh;
 }
+
+@media only screen and (min-width: 1000px) {
+
+#profile-container {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  border: 1px solid black;
+  width: 80%;
+  margin-left: 10%;
+}
+
+.pagecontainer {
+  height: 90vh;
+}
+
+}
 </style>

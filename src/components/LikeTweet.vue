@@ -13,7 +13,7 @@
       src="../assets/dislikeicon.svg"
     />
 
-    <div>Likes: {{ tweetLikes.length }}</div>
+    <div id="likes-text">Likes: {{ likesAmount }}</div>
   </div>
 </template>
 
@@ -26,7 +26,8 @@ export default {
   data() {
     return {
       tweetLikes: [],
-      isLiked: false
+      isLiked: false,
+      likesAmount: 0,
     };
   },
   props: {
@@ -52,11 +53,14 @@ export default {
           data: {
             loginToken: cookies.get("session"),
             tweetId: this.tweetId
+           
           }
         })
         .then(response => {
           console.log(response);
           this.isLiked = true;
+          this.likesAmount++
+         
         })
         .catch(error => {
           console.log(error);
@@ -80,6 +84,7 @@ export default {
         .then(response => {
           console.log(response);
           this.isLiked = false;
+          this.likesAmount--
         })
         .catch(error => {
           console.log(error);
@@ -106,6 +111,7 @@ export default {
           for (let i = 0; i < this.tweetLikes.length; i++) {
             if (cookies.get("user") == this.tweetLikes[i].userId) {
               this.isLiked = true;
+             this.likesAmount = this.tweetlikes.length
               return;
             }
           }
@@ -125,6 +131,11 @@ export default {
 
 #unlikeheart {
   width: 15%;
+}
+@media only screen and (min-width: 1000px) {
+#likes-text{
+  font-size: 1.5em;
+}
 }
 
 

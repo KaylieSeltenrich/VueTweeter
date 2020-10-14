@@ -1,14 +1,14 @@
 <template>
     <div>
-   <div id="create-tweet-container">
+   <div class="create-tweet-container">
       <h1 class="header">Create Tweet:</h1>
       <textarea
-        id="tweet-input"
+        class="tweet-input"
         v-model="content"
         placeholder="200 characters max"
       ></textarea>
       <br />
-      <button id="submit-tweet" class="button" @click="createTweet">
+      <button class="submit-tweet button" @click="createTweet">
         Submit
       </button>
     </div>
@@ -87,17 +87,17 @@ import cookies from "vue-cookies";
   margin-bottom: 5%;
 }
 
-#tweet-input {
+.tweet-input {
   width: 100%;
   height: 10vh;
 }
 
-#submit-tweet {
+.submit-tweet {
   margin-left: 10%;
   width: 80%;
 }
 
-#create-tweet-container {
+.create-tweet-container {
   padding: 5%;
 }
 
@@ -118,6 +118,23 @@ textarea {
 }
 
 @media only screen and (min-width: 1000px) {
+
+.create-tweet-container {
+  text-align: center;
+}
+
+.tweet-input {
+  width: 50%;
+  height: 10vh;
+  font-size: 1.5em;
+}
+
+.submit-tweet {
+  width: 30%;
+  margin: 0;
+  font-size: 0.8em;
+  padding: 1%;
+}
 
 }
 </style>
