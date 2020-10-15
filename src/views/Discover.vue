@@ -1,14 +1,19 @@
 <template>
   <div class="pagecontainer">
     <div v-if="loginToken">
-    <div id="button-container">
-      <view-profiles v-if="showCreateTweet == false"> </view-profiles>
-      <button class="button" @click="showCreateTweet = !showCreateTweet"> Create a Tweet </button>
+      <div id="button-container">
+        <view-profiles v-if="!showCreateTweet"> </view-profiles>
+        <button class="button" v-if="!showCreateTweet" @click="showCreateTweet = !showCreateTweet">
+          Create a Tweet
+        </button>
+        <button class="button" id="return" v-if="showCreateTweet" @click="showCreateTweet = !showCreateTweet">
+          Return
+          </button>
       </div>
       <div v-if="showCreateTweet == true" id="create-tweet-container">
-      <create-tweets> </create-tweets>
+        <create-tweets> </create-tweets>
       </div>
-      
+
       <all-tweets> </all-tweets>
     </div>
     <div class="loggedout" v-else>
@@ -35,23 +40,39 @@ export default {
   data() {
     return {
       loginToken: cookies.get("session"),
-      showCreateTweet: false,
+      showCreateTweet: false
     };
-  }
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-#button-container{
+
+.button {
+    width: 50%;
+    margin-left: 25%;
+    height: 5vh;
+    margin-top: 10%;
+  }
+  #return {
+    margin-top: 0;
+  }
+
+@media only screen and (min-width: 1000px) {
+  #button-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
-@media only screen and (min-width: 1000px) {
- .button{
-   width: 50%;
-   margin-left: 20%;
- }
-  
+  .button {
+    width: 50%;
+    margin-left: 20%;
+    height: 5vh;
+    margin-top: 20%;
+    padding: 0%;
+  }
+  #return {
+    margin-left: 75%;
+  }
 }
 </style>

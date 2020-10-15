@@ -49,9 +49,23 @@ export default {
   z-index: 101;
 }
 
+@media only screen and (min-width: 700px) {
+  #title {
+    font-size: 3em;
+    right: 50%;
+    z-index: 101;
+  }
+
+  #icon {
+    padding: 2%;
+    height: 15vh;
+  }
+}
+
 @media only screen and (min-width: 1000px) {
   #title {
     font-size: 4em;
+    left: 0%;
     text-align: center;
     z-index: 101;
   }

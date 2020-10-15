@@ -175,6 +175,7 @@ export default {
   margin-left: 5%;
 }
 
+
 //Desktop Size
 
 @media only screen and (min-width: 1000px) {

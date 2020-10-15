@@ -13,7 +13,7 @@
       src="../assets/dislikeicon.svg"
     />
 
-    <div id="comment-likes">Likes: {{ commentLikes.length }}</div>
+    <div id="comment-likes">Likes: {{ likesAmount }}</div>
   </div>
 </template>
 
@@ -26,7 +26,8 @@ export default {
   data() {
     return {
       commentLikes: [],
-      isLiked: false
+      isLiked: false,
+      likesAmount: 0,
     };
   },
   props: {
@@ -57,6 +58,7 @@ export default {
         .then(response => {
           console.log(response);
           this.isLiked = true;
+           this.likesAmount++
         })
         .catch(error => {
           console.log(error);
@@ -80,6 +82,7 @@ export default {
         .then(response => {
           console.log(response);
           this.isLiked = false;
+          this.likesAmount--
         })
         .catch(error => {
           console.log(error);
@@ -102,6 +105,7 @@ export default {
         .then(response => {
           console.log(response);
           this.commentLikes = response.data;
+          this.likesAmount = this.commentLikes.length;
 
           for (let i = 0; i < this.commentLikes.length; i++) {
             if (cookies.get("user") == this.commentLikes[i].userId) {

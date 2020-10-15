@@ -9,7 +9,7 @@
       ></textarea>
       <br />
       <button class="submit-tweet button" @click="createTweet">
-        Submit
+        {{submitbuttonText}}
       </button>
     </div>
     </div>
@@ -27,7 +27,8 @@ import cookies from "vue-cookies";
   data() {
     return {
       content: "",
-      userId: cookies.get("user")
+      userId: cookies.get("user"),
+      submitbuttonText: "Submit"
     };
   },
   computed: {
@@ -53,12 +54,12 @@ import cookies from "vue-cookies";
         })
         .then(response => {
           console.log(response);
-          document.getElementById("submit-tweet").innerText = "Success!"
           this.$router.go(0);
+          this.submitbuttonText = "Success!"
         })
         .catch(error => {
           console.log(error);
-          document.getElementById("submit-tweet").innerText = "Error!"
+          this.submitbuttonText = "Error!"
         });
     },
    

@@ -48,7 +48,6 @@ export default new Vuex.Store({
         .then(response => {
           console.log(response);
           state.commit("updateAllTweets", response.data)
-
         })
         .catch(error => {
           console.log(error);
@@ -59,7 +58,7 @@ export default new Vuex.Store({
   getters: {
 
     getUserTweets: function (state) {
-      return state.allTweets.filter(function (tweet) { return state.userId == tweet.userId })
+      return state.allTweets.filter(function (tweet) { return state.userId == tweet.userId }).reverse(state.createdAt)
     },
 
     getFollowingTweets: (state) => (follows) => {

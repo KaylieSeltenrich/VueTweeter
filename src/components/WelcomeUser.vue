@@ -61,16 +61,23 @@ export default {
   margin-left: 3%;
 }
 
+
+@media only screen and (min-width: 700px) {
+  #welcome-message {
+  margin-top: 7%;
+  margin-left: 7%;
+}
+}
+
 //Desktop Size
 @media only screen and (min-width: 1000px) {
 #welcome-message {
  position: relative;
- top:4vh;
- left: 50%;
+ left: 30%;
  width: 50%;
  font-size: 2em;
- float: none;
  margin: 0;
+ margin-top: 1%;
 
 }
   

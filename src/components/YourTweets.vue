@@ -18,13 +18,13 @@
             class="update-tweet button"
             @click="updateTweet(tweet.content, tweet.tweetId)"
           >
-            Edit Tweet
+            {{updatebuttonText}}
           </button>
           <button
             class="delete-tweet button"
             @click="deleteTweet(tweet.tweetId)"
           >
-            Delete Tweet
+            {{deletebuttonText}}
           </button>
         </div>
       </div>
@@ -44,7 +44,9 @@ export default {
   data() {
     return {
       content: "",
-      userId: cookies.get("user")
+      userId: cookies.get("user"),
+      updatebuttonText: "Edit",
+      deletebuttonText: "Delete",
     };
   },
   computed: {
@@ -70,9 +72,11 @@ export default {
         })
         .then(response => {
           console.log(response);
+          this.updatebuttonText = "Success!"
         })
         .catch(error => {
           console.log(error);
+          this.updatebuttonText = "Error!"
         });
     },
     deleteTweet: function(id) {
@@ -91,11 +95,11 @@ export default {
         })
         .then(response => {
           console.log(response);
-          document.getElementById("delete-tweet").innerText = "Success!";
+          this.deletebuttonText = "Success!"
         })
         .catch(error => {
           console.log(error);
-          document.getElementById("delete-tweet").innerText = "Error!";
+          this.deletebuttonText = "Error!"
         });
     },
     getTweets: function() {

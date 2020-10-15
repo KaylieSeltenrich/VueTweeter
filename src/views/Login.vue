@@ -46,7 +46,7 @@ export default {
           cookies.set("session", response.data.loginToken);
           cookies.set("user", response.data.userId);
           this.$store.commit("loginUpdate",response.data.loginToken);
-          this.$router.push("/home");
+          this.$router.push("/");
         })
         .catch(error => {
           console.log(error);

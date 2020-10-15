@@ -107,11 +107,11 @@ export default {
         .then(response => {
           console.log(response);
           this.tweetLikes = response.data;
+          this.likesAmount = this.tweetLikes.length
 
           for (let i = 0; i < this.tweetLikes.length; i++) {
             if (cookies.get("user") == this.tweetLikes[i].userId) {
               this.isLiked = true;
-             this.likesAmount = this.tweetlikes.length
               return;
             }
           }

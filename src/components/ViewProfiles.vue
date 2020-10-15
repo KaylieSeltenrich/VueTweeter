@@ -1,14 +1,18 @@
 <template>
   <div>
-    <button id="discover-profiles" class="button" @click="showProfiles">Discover Profiles</button>
+    <h2 class="header">
+      Discover Profiles
+   </h2>
     <div id="profile-container">
-    <div id="profileuser-container" v-for="user in users" :key="user.userId">
-      {{ user.username }} <br />
-      {{ user.email }} <br />
-      {{ user.birthdate }} <br />
-      {{ user.bio }} <br />
-      <button class="button" @click="followUser(user.userId)"> Follow User </button>
-    </div>
+      <div id="profileuser-container" v-for="user in users" :key="user.userId">
+        {{ user.username }} <br />
+        {{ user.email }} <br />
+        {{ user.birthdate }} <br />
+        {{ user.bio }} <br />
+        <button class="button" @click="followUser(user.userId)">
+          Follow User
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -23,10 +27,12 @@ export default {
   data() {
     return {
       users: [],
+
     };
   },
-
-
+  mounted: function() {
+    this.showProfiles();
+  },
   methods: {
     showProfiles: function() {
       axios
@@ -59,12 +65,11 @@ export default {
           },
           data: {
             loginToken: cookies.get("session"),
-            followId: userId,
+            followId: userId
           }
         })
         .then(response => {
           console.log(response.data);
-
         })
         .catch(error => {
           console.log(error);
@@ -75,7 +80,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#profile-container{
+#profile-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: auto;
@@ -92,19 +97,19 @@ export default {
 }
 
 @media only screen and (min-width: 1000px) {
-#profileuser-container {
-  margin: 3%;
-  font-size: 1.5em;
-}
+  #profileuser-container {
+    margin: 3%;
+    font-size: 1.5em;
+  }
 
-.button {
-  width: 50%;
-  margin-top: 5%;
-}
+  .button {
+    width: 50%;
+    margin-top: 5%;
+    font-size: 0.7em;
+  }
 
-#discover-profiles {
- margin-left: 25%;
-
-}
+  #discover-profiles {
+    margin-left: 25%;
+  }
 }
 </style>
